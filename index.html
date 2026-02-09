@@ -3,274 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jayanth Madduru | Product Executive</title>
+    <title>Jayanth Madduru | The Builder's Manifesto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
     <style>
-        /* --- CSS VARIABLES FOR EASY THEMING --- */
+        /* --- VARIABLES --- */
         :root {
-            --sidebar-bg: #1e293b; /* Dark Slate Blue */
-            --sidebar-text: #f8fafc;
+            --sidebar-bg: #0f172a;
+            --sidebar-text: #e2e8f0;
             --main-bg: #ffffff;
             --text-primary: #334155;
             --text-secondary: #64748b;
-            --accent: #3b82f6; /* Bright Blue */
-            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --accent: #3b82f6; 
+            --font-sans: 'Inter', sans-serif;
+            --font-serif: 'Merriweather', serif;
         }
 
-        /* --- RESET & BASE STYLES --- */
+        /* --- BASE --- */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: var(--font-main); line-height: 1.6; color: var(--text-primary); display: flex; min-height: 100vh; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-sans); line-height: 1.7; color: var(--text-primary); display: flex; min-height: 100vh; }
         a { text-decoration: none; color: inherit; transition: 0.2s; }
-        a:hover { color: var(--accent); }
-
-        /* --- LAYOUT: SIDEBAR (LEFT) --- */
+        
+        /* --- SIDEBAR --- */
         .sidebar {
-            width: 300px;
+            width: 280px;
             background: var(--sidebar-bg);
             color: var(--sidebar-text);
-            padding: 40px 30px;
-            position: fixed; /* Sticky Sidebar */
+            padding: 40px 25px;
+            position: fixed;
             height: 100vh;
             overflow-y: auto;
             flex-shrink: 0;
+            z-index: 100;
         }
 
-        .profile-container { text-align: center; margin-bottom: 40px; }
+        .profile-container { text-align: center; margin-bottom: 30px; }
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid rgba(255,255,255,0.1);
+            border: 3px solid rgba(255,255,255,0.1);
             margin-bottom: 15px;
-            background-color: #334155; /* Placeholder color */
         }
         
-        .contact-info { margin-bottom: 40px; font-size: 0.9rem; }
-        .contact-item { display: flex; align-items: center; margin-bottom: 15px; }
-        .contact-item svg { width: 18px; margin-right: 10px; opacity: 0.7; }
-
-        .sidebar-section { margin-bottom: 35px; }
-        .sidebar-title { 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            font-size: 0.85rem; 
-            font-weight: 700; 
-            margin-bottom: 15px; 
-            opacity: 0.6; 
-            border-bottom: 1px solid rgba(255,255,255,0.1); 
-            padding-bottom: 5px;
+        /* Navigation Menu */
+        .nav-menu { list-style: none; margin-bottom: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+        .nav-item { margin-bottom: 12px; }
+        .nav-link { 
+            display: flex; align-items: center; 
+            font-size: 0.95rem; font-weight: 500; 
+            opacity: 0.7; padding: 8px 0;
         }
-        
-        .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-        .tag {
-            background: rgba(255,255,255,0.1);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
+        .nav-link:hover { opacity: 1; color: var(--accent); transform: translateX(5px); }
+        .nav-link.active { opacity: 1; color: var(--accent); }
 
-        /* --- LAYOUT: MAIN CONTENT (RIGHT) --- */
+        .sidebar-footer { font-size: 0.8rem; opacity: 0.5; margin-top: auto; text-align: center; }
+
+        /* --- MAIN CONTENT --- */
         .main-content {
-            margin-left: 300px; /* Offset for fixed sidebar */
+            margin-left: 280px;
             flex-grow: 1;
-            padding: 60px 80px;
+            padding: 0;
             background: var(--main-bg);
-            max-width: 900px;
+            max-width: 100%;
         }
 
-        .header { margin-bottom: 50px; border-bottom: 2px solid #f1f5f9; padding-bottom: 30px; }
-        .name { font-size: 2.5rem; font-weight: 800; color: #0f172a; line-height: 1.1; margin-bottom: 10px; }
-        .title { font-size: 1.25rem; color: var(--accent); font-weight: 600; margin-bottom: 20px; }
-        .summary { font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; }
+        .container { max-width: 850px; margin: 0 auto; padding: 80px 40px; }
 
-        .section { margin-bottom: 50px; }
-        .section-header { 
-            font-size: 1.5rem; 
-            font-weight: 700; 
-            color: #0f172a; 
-            margin-bottom: 25px; 
-            display: flex; 
-            align-items: center; 
-        }
-        .section-header::after {
-            content: ''; flex-grow: 1; height: 1px; background: #e2e8f0; margin-left: 20px;
-        }
+        /* --- SECTIONS --- */
+        section { margin-bottom: 100px; scroll-margin-top: 50px; }
 
-        .job-item { margin-bottom: 35px; }
+        /* Hero Section */
+        .hero-title { font-size: 3rem; font-weight: 800; color: #0f172a; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero-subtitle { font-size: 1.4rem; color: var(--accent); font-weight: 600; margin-bottom: 30px; }
+        .hero-text { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; font-family: var(--font-serif); }
+
+        /* Manifesto Cards */
+        .manifesto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+        .card { 
+            background: #f8fafc; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; 
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .card-icon { font-size: 2rem; margin-bottom: 15px; display: block; }
+        .card-title { font-weight: 700; margin-bottom: 10px; color: #0f172a; }
+        .card-text { font-size: 0.95rem; color: var(--text-secondary); }
+
+        /* Narrative Text */
+        .narrative-text { font-family: var(--font-serif); font-size: 1.1rem; color: #334155; margin-bottom: 20px; }
+        .narrative-text strong { color: #0f172a; }
+
+        /* Resume Items */
+        .job-item { margin-bottom: 40px; border-left: 3px solid #e2e8f0; padding-left: 25px; position: relative; }
+        .job-item:hover { border-left-color: var(--accent); }
         .job-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
-        .company { font-weight: 700; font-size: 1.1rem; color: #1e293b; }
-        .job-role { color: var(--accent); font-weight: 600; margin-bottom: 8px; display: block;}
+        .company { font-weight: 700; font-size: 1.2rem; color: #1e293b; }
+        .job-role { color: var(--accent); font-weight: 600; display: block; margin-bottom: 10px; }
         .date { font-size: 0.9rem; color: var(--text-secondary); font-family: monospace; }
         .job-desc ul { padding-left: 20px; color: var(--text-secondary); }
         .job-desc li { margin-bottom: 8px; }
 
-        /* --- RESPONSIVE DESIGN (MOBILE) --- */
+        /* Tech Stack Tags */
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .tag { background: #f1f5f9; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; color: #475569; }
+
+        /* --- MOBILE --- */
         @media (max-width: 768px) {
             body { flex-direction: column; }
-            .sidebar { 
-                position: relative; 
-                width: 100%; 
-                height: auto; 
-                padding: 40px 20px; 
-            }
-            .main-content { margin-left: 0; padding: 40px 20px; }
-            .header { text-align: center; }
-            .summary { margin: 0 auto; }
-            .job-top { flex-direction: column; }
-            .date { margin-top: 2px; }
+            .sidebar { position: relative; width: 100%; height: auto; padding: 30px 20px; }
+            .main-content { margin-left: 0; }
+            .container { padding: 40px 20px; }
+            .manifesto-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 2.2rem; }
+            .nav-menu { display: none; } /* Hide nav on mobile for simplicity */
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <aside class="sidebar">
         <div class="profile-container">
-            <img src="profile_pic.jpeg" alt="Profile" class="profile-img">
+            <img src="profile_pic.jpeg" alt="Jay Madduru" class="profile-img">
+            <div style="font-weight: 700; font-size: 1.2rem;">Jay Madduru</div>
+            <div style="font-size: 0.9rem; opacity: 0.7;">Product Executive & AI Architect</div>
         </div>
 
-        <div class="contact-info">
-            <div class="contact-item">
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                <a href="mailto:jayanthm@gmail.com">jayanthm@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                <a href="https://linkedin.com/in/jaymadduru">LinkedIn Profile</a>
-            </div>
-            <div class="contact-item">
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                <span>San Francisco Bay Area</span>
-            </div>
-        </div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#intro" class="nav-link">About Me</a></li>
+            <li class="nav-item"><a href="#philosophy" class="nav-link">My Philosophy</a></li>
+            <li class="nav-item"><a href="#journey" class="nav-link">The Journey</a></li>
+            <li class="nav-item"><a href="#experience" class="nav-link">Track Record</a></li>
+            <li class="nav-item"><a href="#ventures" class="nav-link">Ventures & Impact</a></li>
+        </ul>
 
-        <div class="sidebar-section">
-            <div class="sidebar-title">Expertise</div>
-            <div class="skill-tags">
-                <span class="tag">Product Leadership</span>
-                <span class="tag">Agentic AI</span>
-                <span class="tag">Fintech</span>
-                <span class="tag">Healthcare (SaMD)</span>
-                <span class="tag">Robotics</span>
-                <span class="tag">P&L Management</span>
-            </div>
-        </div>
-
-        <div class="sidebar-section">
-            <div class="sidebar-title">Tech Stack</div>
-            <div class="skill-tags">
-                <span class="tag">Python</span>
-                <span class="tag">LLMs (GPT/Claude)</span>
-                <span class="tag">LangChain</span>
-                <span class="tag">Azure / AWS</span>
-                <span class="tag">Databricks</span>
-                <span class="tag">Model Context Protocol</span>
-            </div>
-        </div>
-        
-        <div class="sidebar-section">
-            <div class="sidebar-title">Education</div>
-            <div style="font-size: 0.85rem; margin-bottom: 10px;">
-                <strong>MIT Professional Ed</strong><br>
-                Applied Data Science (2023)
-            </div>
-            <div style="font-size: 0.85rem;">
-                <strong>Harvard Business School</strong><br>
-                Strategy & Leadership (2018)
-            </div>
+        <div style="margin-top: 30px;">
+            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; opacity: 0.6;">Connect</div>
+            <a href="mailto:jayanthm@gmail.com" style="display: block; margin-bottom: 8px; font-size: 0.9rem; opacity: 0.8; hover: color: var(--accent);">jayanthm@gmail.com</a>
+            <a href="https://linkedin.com/in/jaymadduru" style="display: block; font-size: 0.9rem; opacity: 0.8;">LinkedIn Profile</a>
         </div>
     </aside>
 
     <main class="main-content">
-        <header class="header">
-            <h1 class="name">Jayanth (Jay) Madduru</h1>
-            <div class="title">Product Management Leader & AI Architect</div>
-            <p class="summary">
-                Product Executive with <strong>20+ years of experience</strong> scaling Consumer, Marketplace, and AI Platforms at <strong>Block, Uber, and Tech-Net</strong>. 
-                Expert in bridging "0-to-1" innovation with "1-to-N" scaling. I specialize in <strong>Agentic AI</strong> and <strong>SaMD</strong> architectures 
-                for regulated industries, managing global portfolios that process billions in transaction volume.
-            </p>
-        </header>
+        <div class="container">
+            
+            <section id="intro">
+                <h1 class="hero-title">I bridge the gap between human intent and machine execution.</h1>
+                <h2 class="hero-subtitle">Product Leader. Agentic AI Architect. Robotics Founder.</h2>
+                <p class="hero-text">
+                    For over 20 years, I’ve built platforms that move billions of dollars (Uber, Block) and systems that save lives (Convatec). I don’t just manage products; I architect the technical and cultural systems that allow innovation to scale.
+                </p>
+                <div class="tag-cloud">
+                    <span class="tag">Ex-Uber</span>
+                    <span class="tag">Ex-Block</span>
+                    <span class="tag">Ex-Oracle</span>
+                    <span class="tag">Founder</span>
+                </div>
+            </section>
 
-        <section class="section">
-            <div class="section-header">Experience</div>
+            <section id="philosophy">
+                <div class="section-header">
+                    <h3 style="font-size: 1.8rem; font-weight: 800; color: #0f172a;">My Philosophy</h3>
+                </div>
+                <p class="narrative-text">
+                    We are entering the era of <strong>Agentic AI</strong>, where software doesn't just retrieve information—it takes action. My approach to leadership is defined by four core tenets:
+                </p>
+                <div class="manifesto-grid">
+                    <div class="card">
+                        <span class="card-icon">🤖</span>
+                        <div class="card-title">Beyond Chatbots</div>
+                        <p class="card-text">Static RAG is the past. I build <strong>Agentic Workflows</strong> using MCP and multi-agent swarms that autonomously plan and execute complex tasks.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">🛡️</span>
+                        <div class="card-title">Safety is the Product</div>
+                        <p class="card-text">In healthcare and fintech, "move fast and break things" doesn't work. I champion <strong>HITL (Human-in-the-Loop)</strong> governance for regulated AI.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">🚀</span>
+                        <div class="card-title">0-to-1 Velocity</div>
+                        <p class="card-text">Big companies move slow because of fear. I bring startup velocity to enterprise scales, delivering MVPs (like Cogen) in <strong>3 months, not 12</strong>.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">🧠</span>
+                        <div class="card-title">First Principles</div>
+                        <p class="card-text">I am an engineer by trade and a product leader by choice. I dive deep into the stack (LangChain, Azure, Databricks) to know what's possible.</p>
+                    </div>
+                </div>
+            </section>
 
-            <div class="job-item">
-                <div class="job-top">
-                    <span class="company">Tech-Net, Inc.</span>
-                    <span class="date">Dec 2022 – Present</span>
+            <section id="journey">
+                <div class="section-header">
+                    <h3 style="font-size: 1.8rem; font-weight: 800; color: #0f172a;">The Journey</h3>
                 </div>
-                <span class="job-role">Chief Product Officer (Head of Product & Architecture)</span>
-                <div class="job-desc">
-                    <ul>
-                        <li><strong>0-to-1 Innovation:</strong> Incubated and launched "Worflown," an AI suite that redefined enterprise workflows, driving a 20% YoY revenue increase.</li>
-                        <li><strong>Agentic AI Strategy:</strong> Transitioned platforms from static RAG to Agentic AI workflows, deploying multi-agent swarms for healthcare tasks.</li>
-                        <li><strong>Vision & Consensus:</strong> Championed the Model Context Protocol (MCP) as the enterprise standard for AI interoperability across 12+ client environments.</li>
-                    </ul>
-                </div>
-            </div>
+                <p class="narrative-text">
+                    My career has been a deliberate progression through the layers of the global technology stack.
+                </p>
+                <p class="narrative-text">
+                    It started at <strong>Oracle</strong>, understanding the plumbing of enterprise data. It moved to <strong>Silver Spring</strong>, where I learned how to connect the physical world (IoT) to the digital one.
+                </p>
+                <p class="narrative-text">
+                    At <strong>Uber</strong> and <strong>Block</strong>, I mastered <strong>hyper-scale</strong>—building the financial rails ("Arthika") and risk engines that handle billions of dollars in daily volume. I learned that at scale, 99.9% reliability isn't good enough.
+                </p>
+                <p class="narrative-text">
+                    Today, I am applying that rigor to <strong>Healthcare and Robotics</strong>. Whether it's architecting SaMD platforms or mentoring the next generation via Brickbots, my focus is on high-stakes, high-impact technology.
+                </p>
+            </section>
 
-            <div class="job-item">
-                <div class="job-top">
-                    <span class="company">Convatec</span>
-                    <span class="date">Sep 2024 – Oct 2025</span>
+            <section id="experience">
+                <div class="section-header">
+                    <h3 style="font-size: 1.8rem; font-weight: 800; color: #0f172a;">The Track Record</h3>
                 </div>
-                <span class="job-role">Principal Product Architect & AI Consultant (SaMD)</span>
-                <div class="job-desc">
-                    <ul>
-                        <li><strong>Rapid Execution:</strong> Delivered "Cogen" (GenAI content platform) from concept to production MVP in just 3 months.</li>
-                        <li><strong>SaMD Architecture:</strong> Built Software as a Medical Device infrastructure on Azure, ensuring HIPAA compliance for clinical devices.</li>
-                        <li><strong>Data Platform:</strong> Spearheaded the healthcare data lakehouse on Databricks to power real-time personalization.</li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="job-item">
-                <div class="job-top">
-                    <span class="company">Block, Inc. (Cash App)</span>
-                    <span class="date">Aug 2020 – Dec 2022</span>
+                <div class="job-item">
+                    <div class="job-top">
+                        <span class="company">Tech-Net, Inc.</span>
+                        <span class="date">Dec 2022 – Present</span>
+                    </div>
+                    <span class="job-role">Chief Product Officer (Head of Product & Architecture)</span>
+                    <div class="job-desc">
+                        <ul>
+                            <li><strong>Agentic AI Strategy:</strong> Transitioned platforms from static RAG to Agentic AI workflows, deploying multi-agent swarms for healthcare tasks.</li>
+                            <li><strong>Impact:</strong> Defined AI strategy driving a 20% YoY revenue increase and incubated "Worflown" suite (40% client cost reduction).</li>
+                            <li><strong>Standardization:</strong> Championed the Model Context Protocol (MCP) as the enterprise standard for AI interoperability.</li>
+                        </ul>
+                    </div>
                 </div>
-                <span class="job-role">Director of Product, Platform & AI</span>
-                <div class="job-desc">
-                    <ul>
-                        <li><strong>Consumer Scale:</strong> Led the "Performance Platform" team, shipping 6 financial products in under 2 years that secured billions in P2P volume.</li>
-                        <li><strong>AI for UX:</strong> Deployed Deep Learning models achieving a 50% increase in fraud detection accuracy while reducing user friction.</li>
-                        <li><strong>Team Leadership:</strong> Unified engineering and product cultures, improving retention rates by over 50%.</li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="job-item">
-                <div class="job-top">
-                    <span class="company">Uber Technologies</span>
-                    <span class="date">Mar 2016 – Aug 2020</span>
+                <div class="job-item">
+                    <div class="job-top">
+                        <span class="company">Convatec</span>
+                        <span class="date">Sep 2024 – Oct 2025</span>
+                    </div>
+                    <span class="job-role">Principal Product Architect & AI Consultant (SaMD)</span>
+                    <div class="job-desc">
+                        <ul>
+                            <li><strong>Rapid Execution:</strong> Delivered "Cogen" (GenAI content platform) from concept to production MVP in just 3 months.</li>
+                            <li><strong>SaMD Architecture:</strong> Built Software as a Medical Device infrastructure on Azure, ensuring HIPAA compliance.</li>
+                            <li><strong>Stack:</strong> LangChain, Semantic Kernel, Azure OpenAI, Databricks.</li>
+                        </ul>
+                    </div>
                 </div>
-                <span class="job-role">Group Product Manager, Money & Fintech</span>
-                <div class="job-desc">
-                    <ul>
-                        <li><strong>Marketplace Liquidity:</strong> Built "Arthika," the real-time financial engine processing billions annually across Rides, Eats, and Freight.</li>
-                        <li><strong>Global Expansion:</strong> Launched payment products in 60+ countries with 99.99% uptime.</li>
-                        <li><strong>Unit Economics:</strong> Leveraged ML-driven pricing models to improve profit margins by 3%+.</li>
-                    </ul>
-                </div>
-            </div>
 
-        </section>
-        
-        <section class="section">
-             <div class="section-header">Ventures</div>
-             <div class="job-item">
-                <div class="job-top">
-                    <span class="company">Brickbots Robotics Inc.</span>
-                    <span class="date">Jan 2026 – Present</span>
+                <div class="job-item">
+                    <div class="job-top">
+                        <span class="company">Block, Inc. (Cash App)</span>
+                        <span class="date">Aug 2020 – Dec 2022</span>
+                    </div>
+                    <span class="job-role">Director of Product, Platform & AI</span>
+                    <div class="job-desc">
+                        <ul>
+                            <li><strong>Consumer Scale:</strong> Shipped 6 financial products in <2 years; managed Risk Data Models securing billions in P2P volume.</li>
+                            <li><strong>AI for UX:</strong> Utilized Deep Learning to achieve a 50% increase in fraud detection accuracy while reducing user friction.</li>
+                        </ul>
+                    </div>
                 </div>
-                <span class="job-role">Founder & Chairman</span>
-                <div class="job-desc">
-                    Founded a 501(c)(3) robotics accelerator partnering with FIRST Robotics to democratize access to STEAM education, focusing on healthcare applications and manufacturing innovation.
-                </div>
-            </div>
-        </section>
 
+                <div class="job-item">
+                    <div class="job-top">
+                        <span class="company">Uber Technologies</span>
+                        <span class="date">Mar 2016 – Aug 2020</span>
+                    </div>
+                    <span class="job-role">Group Product Manager, Money & Fintech</span>
+                    <div class="job-desc">
+                        <ul>
+                            <li><strong>Global Rails:</strong> Built "Arthika," the real-time financial engine processing billions annually across Rides, Eats, and Freight.</li>
+                            <li><strong>Marketplace:</strong> Delivered compliance-focused payment products across 60+ countries with 99.99% availability.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ventures">
+                <div class="section-header">
+                    <h3 style="font-size: 1.8rem; font-weight: 800; color: #0f172a;">Ventures & Impact</h3>
+                </div>
+                
+                <div class="card" style="background: white; border-left: 5px solid var(--accent);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h4 style="font-size: 1.4rem; font-weight: 700;">Brickbots Robotics Inc.</h4>
+                        <span class="tag">Founder & Chairman</span>
+                    </div>
+                    <p class="narrative-text" style="font-size: 1rem;">
+                        <strong>Jan 2026 – Present</strong>
+                    </p>
+                    <p class="narrative-text">
+                        A 501(c)(3) robotics accelerator operating at the intersection of Healthcare, AI, and Manufacturing. We partner with <strong>FIRST Robotics</strong> to democratize access to STEAM education.
+                    </p>
+                    <p class="narrative-text">
+                        I believe the future isn't just digital—it's embodied. Brickbots is where we explore material science and future human living applications while mentoring the next generation of engineers.
+                    </p>
+                </div>
+            </section>
+
+        </div>
     </main>
+
+    <script>
+        // Simple script to highlight active nav item on scroll
+        const sections = document.querySelectorAll('section');
+        const navLi = document.querySelectorAll('.nav-menu .nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLi.forEach(li => {
+                li.classList.remove('active');
+                if (li.getAttribute('href').includes(current)) {
+                    li.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
