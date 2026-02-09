@@ -212,7 +212,7 @@
         .card-meta { margin-top: 20px; font-size: 0.85rem; color: var(--text-secondary); border-top: 1px solid var(--border); padding-top: 15px; }
         .card-meta strong { color: var(--text-primary); }
 
-        /* BUILD RECORD (New Creative Section) */
+        /* BUILD RECORD */
         .build-item {
             display: grid;
             grid-template-columns: 180px 1fr;
@@ -234,12 +234,6 @@
         
         .tech-pill-container { display: flex; gap: 8px; flex-wrap: wrap; }
         .tech-pill { font-size: 0.75rem; background: #f1f5f9; padding: 4px 10px; border-radius: 4px; color: #64748b; font-weight: 500; border: 1px solid #e2e8f0; }
-
-        /* Foundation List */
-        .foundation-item { display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
-        .foundation-role { font-weight: 700; color: var(--text-primary); font-size: 1rem; }
-        .foundation-company { color: var(--text-secondary); font-size: 0.9rem; }
-        .foundation-date { font-family: monospace; font-size: 0.85rem; color: var(--text-muted); }
 
         /* Mobile */
         @media (max-width: 900px) {
@@ -269,7 +263,6 @@
             <a href="#philosophy" class="nav-link">First Principles</a>
             <a href="#builds" class="nav-link">Architectural Record</a>
             <a href="#ventures" class="nav-link">The Ecosystem</a>
-            <a href="#foundation" class="nav-link">Bedrock</a>
         </nav>
         
         <div class="sidebar-label">Career History</div>
@@ -278,6 +271,8 @@
             <span class="company-tag">Convatec</span>
             <span class="company-tag">Block (Cash App)</span>
             <span class="company-tag">Uber</span>
+            <span class="company-tag">Silver Spring Networks</span>
+            <span class="company-tag">SVS Solutions</span>
             <span class="company-tag">Oracle</span>
         </div>
 
@@ -359,7 +354,7 @@
                     </div>
                     <div class="build-content">
                         <div class="build-system-name">The Financial Nervous System</div>
-                        [cite_start]<span class="build-company">Deployed at UBER [cite: 9]</span>
+                        <span class="build-company">Deployed at UBER</span>
                         <p class="build-desc">
                             <strong>System Name: Arthika.</strong> A real-time external subledger handling money movement across 60 countries. We treated Profitability as an ML "Objective Function" to optimize unit economics at the transaction level.
                         </p>
@@ -457,35 +452,6 @@
                             <strong>🚀 Samartha International:</strong> Talent Incubation. Preparing future builders.
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section id="foundation">
-                <span class="section-label">Bedrock</span>
-                <p class="section-intro">Before the unicorn era, I cut my teeth on the hard plumbing of the enterprise.</p>
-                
-                <div class="foundation-item">
-                    <div>
-                        <div class="foundation-role">Silver Spring Networks (IoT)</div>
-                        <div class="foundation-company">Managed $400M Smart Grid Deals (PG&E, Google)</div>
-                    </div>
-                    <div class="foundation-date">2010 - 2016</div>
-                </div>
-
-                <div class="foundation-item">
-                    <div>
-                        <div class="foundation-role">SVS Solutions</div>
-                        <div class="foundation-company">Co-Founder & CEO (Acquired)</div>
-                    </div>
-                    <div class="foundation-date">2008 - 2010</div>
-                </div>
-
-                <div class="foundation-item">
-                    <div>
-                        <div class="foundation-role">Oracle USA</div>
-                        <div class="foundation-company">Sr. Principal Consultant (ERP Architecture)</div>
-                    </div>
-                    <div class="foundation-date">2006 - 2008</div>
                 </div>
             </section>
 
