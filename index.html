@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jayanth Madduru | The Builder's Manifesto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <meta name="description" content="Product Executive, AI Architect, and Investor. Ex-Uber, Ex-Block. Building Agentic AI, Fintech Infrastructure, and Robotics.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     <style>
         /* --- VARIABLES --- */
         :root {
@@ -14,6 +15,7 @@
             --text-primary: #334155;
             --text-secondary: #64748b;
             --accent: #3b82f6; 
+            --accent-light: #eff6ff;
             --font-sans: 'Inter', sans-serif;
             --font-serif: 'Merriweather', serif;
         }
@@ -23,10 +25,11 @@
         html { scroll-behavior: smooth; }
         body { font-family: var(--font-sans); line-height: 1.7; color: var(--text-primary); display: flex; min-height: 100vh; }
         a { text-decoration: none; color: inherit; transition: 0.2s; }
-        
+        strong { font-weight: 700; color: #1e293b; }
+
         /* --- SIDEBAR --- */
         .sidebar {
-            width: 280px;
+            width: 300px;
             background: var(--sidebar-bg);
             color: var(--sidebar-text);
             padding: 40px 25px;
@@ -49,27 +52,46 @@
         
         /* Navigation Menu */
         .nav-menu { list-style: none; margin-bottom: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
-        .nav-item { margin-bottom: 12px; }
+        .nav-item { margin-bottom: 8px; }
         .nav-link { 
             display: flex; align-items: center; 
-            font-size: 0.95rem; font-weight: 500; 
+            font-size: 0.9rem; font-weight: 500; 
             opacity: 0.7; padding: 8px 0;
         }
         .nav-link:hover { opacity: 1; color: var(--accent); transform: translateX(5px); }
-        .nav-link.active { opacity: 1; color: var(--accent); }
+        .nav-link.active { opacity: 1; color: var(--accent); font-weight: 600; }
 
-        .sidebar-footer { font-size: 0.8rem; opacity: 0.5; margin-top: auto; text-align: center; }
+        .sidebar-section { margin-bottom: 30px; }
+        .sidebar-title { 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            margin-bottom: 12px; 
+            opacity: 0.5; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+            padding-bottom: 5px;
+        }
+
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #cbd5e1;
+        }
 
         /* --- MAIN CONTENT --- */
         .main-content {
-            margin-left: 280px;
+            margin-left: 300px;
             flex-grow: 1;
             padding: 0;
             background: var(--main-bg);
             max-width: 100%;
         }
 
-        .container { max-width: 850px; margin: 0 auto; padding: 80px 40px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 80px 50px; }
 
         /* --- SECTIONS --- */
         section { margin-bottom: 100px; scroll-margin-top: 50px; }
@@ -79,34 +101,43 @@
         .hero-subtitle { font-size: 1.4rem; color: var(--accent); font-weight: 600; margin-bottom: 30px; }
         .hero-text { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; font-family: var(--font-serif); }
 
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+        .hero-tag { background: #f1f5f9; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; color: #475569; }
+
+        /* Section Headers */
+        .section-header { margin-bottom: 40px; }
+        .section-title { font-size: 1.8rem; font-weight: 800; color: #0f172a; }
+
         /* Manifesto Cards */
-        .manifesto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+        .manifesto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
         .card { 
             background: #f8fafc; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; 
-            transition: transform 0.2s;
+            transition: transform 0.2s, border-color 0.2s;
         }
-        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .card:hover { transform: translateY(-3px); border-color: var(--accent); }
         .card-icon { font-size: 2rem; margin-bottom: 15px; display: block; }
-        .card-title { font-weight: 700; margin-bottom: 10px; color: #0f172a; }
-        .card-text { font-size: 0.95rem; color: var(--text-secondary); }
+        .card-title { font-weight: 700; margin-bottom: 10px; color: #0f172a; font-size: 1.1rem; }
+        .card-text { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
 
         /* Narrative Text */
-        .narrative-text { font-family: var(--font-serif); font-size: 1.1rem; color: #334155; margin-bottom: 20px; }
-        .narrative-text strong { color: #0f172a; }
+        .narrative-text { font-family: var(--font-serif); font-size: 1.05rem; color: #334155; margin-bottom: 20px; line-height: 1.8; }
 
-        /* Resume Items */
-        .job-item { margin-bottom: 40px; border-left: 3px solid #e2e8f0; padding-left: 25px; position: relative; }
+        /* Job Items */
+        .job-item { margin-bottom: 45px; border-left: 4px solid #e2e8f0; padding-left: 30px; position: relative; }
         .job-item:hover { border-left-color: var(--accent); }
         .job-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
-        .company { font-weight: 700; font-size: 1.2rem; color: #1e293b; }
-        .job-role { color: var(--accent); font-weight: 600; display: block; margin-bottom: 10px; }
+        .company { font-weight: 700; font-size: 1.25rem; color: #1e293b; }
+        .job-role { color: var(--accent); font-weight: 600; display: block; margin-bottom: 12px; font-size: 1rem; }
         .date { font-size: 0.9rem; color: var(--text-secondary); font-family: monospace; }
         .job-desc ul { padding-left: 20px; color: var(--text-secondary); }
-        .job-desc li { margin-bottom: 8px; }
+        .job-desc li { margin-bottom: 8px; font-size: 0.95rem; }
 
-        /* Tech Stack Tags */
-        .tag-cloud { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-        .tag { background: #f1f5f9; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; color: #475569; }
+        /* Earlier Career Compact */
+        .ec-item { margin-bottom: 20px; }
+        .ec-header { display: flex; justify-content: space-between; margin-bottom: 4px; }
+        .ec-company { font-weight: 700; color: #334155; }
+        .ec-title { color: var(--accent); font-weight: 600; font-size: 0.95rem; }
+        .ec-desc { font-size: 0.9rem; color: var(--text-secondary); }
 
         /* --- MOBILE --- */
         @media (max-width: 768px) {
@@ -116,7 +147,9 @@
             .container { padding: 40px 20px; }
             .manifesto-grid { grid-template-columns: 1fr; }
             .hero-title { font-size: 2.2rem; }
-            .nav-menu { display: none; } /* Hide nav on mobile for simplicity */
+            .nav-menu { display: none; } 
+            .job-top { flex-direction: column; }
+            .date { margin-top: 4px; }
         }
     </style>
 </head>
@@ -126,21 +159,56 @@
         <div class="profile-container">
             <img src="profile_pic.jpeg" alt="Jay Madduru" class="profile-img">
             <div style="font-weight: 700; font-size: 1.2rem;">Jay Madduru</div>
-            <div style="font-size: 0.9rem; opacity: 0.7;">Product Executive & AI Architect</div>
+            <div style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Product Executive & AI Architect</div>
         </div>
 
         <ul class="nav-menu">
             <li class="nav-item"><a href="#intro" class="nav-link">About Me</a></li>
             <li class="nav-item"><a href="#philosophy" class="nav-link">My Philosophy</a></li>
+            <li class="nav-item"><a href="#ventures" class="nav-link">Capital & Community</a></li>
             <li class="nav-item"><a href="#journey" class="nav-link">The Journey</a></li>
-            <li class="nav-item"><a href="#experience" class="nav-link">Track Record</a></li>
-            <li class="nav-item"><a href="#ventures" class="nav-link">Ventures & Impact</a></li>
+            <li class="nav-item"><a href="#experience" class="nav-link">The Track Record</a></li>
         </ul>
 
-        <div style="margin-top: 30px;">
-            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; opacity: 0.6;">Connect</div>
-            <a href="mailto:jayanthm@gmail.com" style="display: block; margin-bottom: 8px; font-size: 0.9rem; opacity: 0.8; hover: color: var(--accent);">jayanthm@gmail.com</a>
-            <a href="https://linkedin.com/in/jaymadduru" style="display: block; font-size: 0.9rem; opacity: 0.8;">LinkedIn Profile</a>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Core Expertise</div>
+            <div class="skill-tags">
+                <span class="tag">Product Leadership</span>
+                <span class="tag">Agentic AI</span>
+                <span class="tag">Fintech Infrastructure</span>
+                <span class="tag">Order-to-Cash (O2C)</span>
+                <span class="tag">Healthcare (SaMD)</span>
+                <span class="tag">Robotics</span>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-title">Tech Stack</div>
+            <div class="skill-tags">
+                <span class="tag">Python</span>
+                <span class="tag">LLMs / RAG</span>
+                <span class="tag">LangChain / MCP</span>
+                <span class="tag">Kafka / Streamio</span>
+                <span class="tag">Snowflake / Fivetran</span>
+                <span class="tag">Oracle ERP / Hyperion</span>
+            </div>
+        </div>
+        
+        <div class="sidebar-section">
+            <div class="sidebar-title">Education</div>
+            <div style="font-size: 0.8rem; color: #cbd5e1; margin-bottom: 10px;">
+                <strong>MIT Professional Ed</strong><br>
+                Applied Data Science (2023)
+            </div>
+            <div style="font-size: 0.8rem; color: #cbd5e1;">
+                <strong>Harvard Business School</strong><br>
+                Strategy & Leadership (2018)
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <a href="mailto:jayanthm@gmail.com" style="display: block; margin-bottom: 8px; font-size: 0.85rem; opacity: 0.8;">jayanthm@gmail.com</a>
+            <a href="https://linkedin.com/in/jaymadduru" style="display: block; font-size: 0.85rem; opacity: 0.8;">LinkedIn Profile</a>
         </div>
     </aside>
 
@@ -154,16 +222,16 @@
                     For over 20 years, I’ve built platforms that move billions of dollars (Uber, Block) and systems that save lives (Convatec). I don’t just manage products; I architect the technical and cultural systems that allow innovation to scale.
                 </p>
                 <div class="tag-cloud">
-                    <span class="tag">Ex-Uber</span>
-                    <span class="tag">Ex-Block</span>
-                    <span class="tag">Ex-Oracle</span>
-                    <span class="tag">Founder</span>
+                    <span class="hero-tag">Ex-Uber</span>
+                    <span class="hero-tag">Ex-Block</span>
+                    <span class="hero-tag">Ex-Oracle</span>
+                    <span class="hero-tag">Founder</span>
                 </div>
             </section>
 
             <section id="philosophy">
                 <div class="section-header">
-                    <h3 style="font-size: 1.8rem; font-weight: 800; color: #0f172a;">My Philosophy</h3>
+                    <h3 class="section-title">My Philosophy</h3>
                 </div>
                 <p class="narrative-text">
                     We are entering the era of <strong>Agentic AI</strong>, where software doesn't just retrieve information—it takes action. My approach to leadership is defined by four core tenets:
@@ -192,15 +260,58 @@
                 </div>
             </section>
 
+            <section id="ventures">
+                <div class="section-header">
+                    <h3 class="section-title">Capital & Community</h3>
+                </div>
+                
+                <p class="narrative-text">
+                    I believe in building the future on two fronts: <strong>Capital Allocation</strong> for high-growth tech, and <strong>Education</strong> for the next generation of human talent.
+                </p>
+
+                <div class="manifesto-grid">
+                    <div class="card" style="border-left: 5px solid #10b981;">
+                        <span class="card-icon">💸</span>
+                        <div class="card-title">The Investor</div>
+                        <p class="card-text" style="margin-bottom: 10px;">
+                            <strong>Northwest & uFin Capital:</strong> General Partner. Leading syndicates of like-minded operators to back high-conviction startups.
+                        </p>
+                        <ul style="font-size: 0.9rem; color: #475569; list-style: none;">
+                            <li style="margin-bottom: 6px;">🦄 <strong>Hivel.ai:</strong> First check writer. Supported from $0 to <strong>$1M+ ARR</strong>.</li>
+                            <li style="margin-bottom: 6px;">☕ <strong>Affogato.ai:</strong> Guided pivot from Walrus Inc to AI Security.</li>
+                            <li>🌏 <strong>Loanyantra:</strong> Angel investor in Indian Fintech.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card" style="border-left: 5px solid #f59e0b;">
+                        <span class="card-icon">🎓</span>
+                        <div class="card-title">The Educator</div>
+                        <p class="card-text" style="margin-bottom: 10px;">
+                            <strong>Building the builders.</strong> My focus is on integrating technology and modern pedagogy to prepare students for a rapidly evolving world.
+                        </p>
+                        <ul style="font-size: 0.9rem; color: #475569; list-style: none;">
+                            <li style="margin-bottom: 6px;">🏫 <strong>Samartha International School:</strong> Partner & Board Member. Building premier education infrastructure in India.</li>
+                            <li>🤖 <strong>Brickbots Robotics:</strong> Founder. Partnering with FIRST Robotics to teach manufacturing & material science.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: #f8fafc; padding: 25px; border-radius: 8px; border: 1px dashed #cbd5e1; margin-top: 30px;">
+                    <p class="narrative-text" style="margin-bottom: 0; font-style: italic; font-size: 1rem;">
+                        "I love to spend time building the future of technology, but even more so, I love coaching the humans who will wield it. Whether it's a founder hitting $1M ARR or a student building their first robot, my goal is the same: <strong>Build the people who build the future.</strong>"
+                    </p>
+                </div>
+            </section>
+
             <section id="journey">
                 <div class="section-header">
-                    <h3 style="font-size: 1.8rem; font-weight: 800; color: #0f172a;">The Journey</h3>
+                    <h3 class="section-title">The Journey</h3>
                 </div>
                 <p class="narrative-text">
                     My career has been a deliberate progression through the layers of the global technology stack.
                 </p>
                 <p class="narrative-text">
-                    It started at <strong>Oracle</strong>, understanding the plumbing of enterprise data. It moved to <strong>Silver Spring</strong>, where I learned how to connect the physical world (IoT) to the digital one.
+                    It started at <strong>Oracle</strong>, understanding the plumbing of enterprise data (ERP, GL, P2P). It moved to <strong>Silver Spring</strong>, where I learned how to connect the physical world (IoT) to the digital one.
                 </p>
                 <p class="narrative-text">
                     At <strong>Uber</strong> and <strong>Block</strong>, I mastered <strong>hyper-scale</strong>—building the financial rails ("Arthika") and risk engines that handle billions of dollars in daily volume. I learned that at scale, 99.9% reliability isn't good enough.
@@ -212,7 +323,7 @@
 
             <section id="experience">
                 <div class="section-header">
-                    <h3 style="font-size: 1.8rem; font-weight: 800; color: #0f172a;">The Track Record</h3>
+                    <h3 class="section-title">The Track Record</h3>
                 </div>
 
                 <div class="job-item">
@@ -223,9 +334,10 @@
                     <span class="job-role">Chief Product Officer (Head of Product & Architecture)</span>
                     <div class="job-desc">
                         <ul>
-                            <li><strong>Agentic AI Strategy:</strong> Transitioned platforms from static RAG to Agentic AI workflows, deploying multi-agent swarms for healthcare tasks.</li>
-                            <li><strong>Impact:</strong> Defined AI strategy driving a 20% YoY revenue increase and incubated "Worflown" suite (40% client cost reduction).</li>
-                            <li><strong>Standardization:</strong> Championed the Model Context Protocol (MCP) as the enterprise standard for AI interoperability.</li>
+                            <li><strong>Agentic AI Strategy:</strong> Transitioned platforms from static RAG to <strong>Agentic AI</strong> workflows, deploying multi-agent swarms for healthcare tasks.</li>
+                            <li><strong>Revenue Impact:</strong> Established long-term vision driving a <strong>20% YoY revenue increase</strong> and incubated "Worflown" suite (40% client cost reduction).</li>
+                            <li><strong>Core Growth:</strong> Led ML/AI SaaS solutions for core utilities business, driving a <strong>15% growth</strong> in customer acquisition and retention.</li>
+                            <li><strong>Standardization:</strong> Championed the <strong>Model Context Protocol (MCP)</strong> as the enterprise standard for AI interoperability.</li>
                         </ul>
                     </div>
                 </div>
@@ -238,9 +350,9 @@
                     <span class="job-role">Principal Product Architect & AI Consultant (SaMD)</span>
                     <div class="job-desc">
                         <ul>
-                            <li><strong>Rapid Execution:</strong> Delivered "Cogen" (GenAI content platform) from concept to production MVP in just 3 months.</li>
-                            <li><strong>SaMD Architecture:</strong> Built Software as a Medical Device infrastructure on Azure, ensuring HIPAA compliance.</li>
-                            <li><strong>Stack:</strong> LangChain, Semantic Kernel, Azure OpenAI, Databricks.</li>
+                            <li><strong>Rapid Execution:</strong> Delivered "Cogen" (GenAI content platform) from concept to <strong>production MVP in just 3 months</strong>.</li>
+                            <li><strong>SaMD Architecture:</strong> Built Software as a Medical Device infrastructure on <strong>Azure</strong>, ensuring HIPAA compliance.</li>
+                            <li><strong>Data Platform:</strong> Spearheaded the healthcare data lakehouse on <strong>Databricks</strong> to power real-time personalization.</li>
                         </ul>
                     </div>
                 </div>
@@ -253,8 +365,10 @@
                     <span class="job-role">Director of Product, Platform & AI</span>
                     <div class="job-desc">
                         <ul>
-                            <li><strong>Consumer Scale:</strong> Shipped 6 financial products in <2 years; managed Risk Data Models securing billions in P2P volume.</li>
-                            <li><strong>AI for UX:</strong> Utilized Deep Learning to achieve a 50% increase in fraud detection accuracy while reducing user friction.</li>
+                            <li><strong>Risk & Identity:</strong> Shipped 6 hyper-scale products including <strong>Enterprise Financial Risk Analytics</strong> securing billions in Consumer P2P volume.</li>
+                            <li><strong>Data Architecture:</strong> Modernized data pipelines (Snowflake, Airflow) enabling transaction-level experimentation.</li>
+                            <li><strong>Impact Metrics:</strong> Deployed Deep Learning models achieving a <strong>50% increase</strong> in accuracy and a <strong>30% reduction</strong> in time-to-adoption.</li>
+                            <li><strong>Culture:</strong> Unified engineering and product cultures, improving retention rates by over 50%.</li>
                         </ul>
                     </div>
                 </div>
@@ -262,99 +376,53 @@
                 <div class="job-item">
                     <div class="job-top">
                         <span class="company">Uber Technologies</span>
-                        <span class="date">Mar 2016 – Aug 2020</span>
+                        <span class="date">Mar 2016 – Jul 2020</span>
                     </div>
                     <span class="job-role">Group Product Manager, Money & Fintech</span>
                     <div class="job-desc">
                         <ul>
-                            <li><strong>Global Rails:</strong> Built "Arthika," the real-time financial engine processing billions annually across Rides, Eats, and Freight.</li>
-                            <li><strong>Marketplace:</strong> Delivered compliance-focused payment products across 60+ countries with 99.99% availability.</li>
+                            <li><strong>Platform Architecture (Arthika):</strong> Built a real-time, microservices-based <strong>External Subledger</strong> handling Incentives, Pricing, Billing, and Collections for Freight, U4B, Uber Direct, Rides, and Eats.</li>
+                            <li><strong>AI-Driven Profitability:</strong> Implemented <strong>"Profitability as Objective Function"</strong> models to optimize multi-party unit economics and pricing.</li>
+                            <li><strong>Operational Scale:</strong> Achieved <strong>80% automation</strong> in billing operations and <strong>100% conversion</strong> on self-serve portals.</li>
+                            <li><strong>O2C Automation:</strong> Architected the Order-to-Cash pipeline (Billing, Collections, Cash App) achieving <strong>99.99% accuracy</strong> across 60+ global markets.</li>
                         </ul>
                     </div>
                 </div>
-            </section>
 
-            <section id="ventures">
-                <div class="section-header">
-                    <h3 style="font-size: 1.8rem; font-weight: 800; color: #0f172a;">Capital & Community</h3>
-                </div>
-                
-                <p class="narrative-text" style="margin-bottom: 30px;">
-                    I believe in building the future on two fronts: <strong>Capital Allocation</strong> for high-growth tech, and <strong>Education</strong> for the next generation of human talent.
-                </p>
-
-                <h4 style="font-size: 1.2rem; font-weight: 700; color: #334155; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">The Investor</h4>
-                
-                <div class="manifesto-grid" style="margin-top: 10px; margin-bottom: 50px;">
-                    <div class="card" style="border-left: 5px solid #10b981;">
-                        <span class="card-icon">💸</span>
-                        <div class="card-title">Northwest & uFin Capital</div>
-                        <p class="card-text">
-                            <strong>Co-Operator / General Partner.</strong><br>
-                            Leading two syndicates of like-minded operators. We don't just write checks; we provide the architectural air cover founders need.
-                        </p>
-                        <div style="margin-top: 10px; font-size: 0.85rem; color: #64748b;">
-                            <strong>Notable Pivot:</strong> Guided <em>Walrus Inc.</em> through their evolution into <strong>Affogato.ai</strong> (AI Security).
+                <div style="margin-top: 50px;">
+                    <h4 style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; font-weight: 700; color: #94a3b8; margin-bottom: 20px;">Foundational Experience</h4>
+                    
+                    <div class="ec-item">
+                        <div class="ec-header">
+                            <span class="ec-company">Silver Spring Networks</span>
+                            <span class="ec-title">Sr. Product Manager, IoT (2012-2016)</span>
                         </div>
+                        <div class="ec-desc">Managed IoT products for smart grid infrastructure, driving <strong>20% YoY revenue growth</strong>.</div>
                     </div>
 
-                    <div class="card" style="border-left: 5px solid #3b82f6;">
-                        <span class="card-icon">🚀</span>
-                        <div class="card-title">Angel Portfolio</div>
-                        <p class="card-text">
-                            <strong>First-Check Conviction.</strong><br>
-                            I back technical founders solving unsexy, high-value problems.
-                        </p>
-                        <ul style="margin-top: 10px; font-size: 0.9rem; color: #334155; list-style: none;">
-                            <li style="margin-bottom: 6px;">
-                                🦄 <strong>Hivel.ai:</strong> First check writer. Supported them from $0 to recently crossing <strong>$1M+ ARR</strong>.
-                            </li>
-                            <li>
-                                🌏 <strong>Loanyantra:</strong> deeply integrated India loan origination software, bridging my Fintech roots with global markets.
-                            </li>
-                        </ul>
+                    <div class="ec-item">
+                        <div class="ec-header">
+                            <span class="ec-company">SVS Solutions</span>
+                            <span class="ec-title">Co-Founder & CEO (2007-2012)</span>
+                        </div>
+                        <div class="ec-desc">Bootstrapped enterprise solutions company; led strategy through <strong>acquisition in 2010</strong>.</div>
                     </div>
-                </div>
 
-                <h4 style="font-size: 1.2rem; font-weight: 700; color: #334155; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">The Educator</h4>
-
-                <div class="job-item" style="border-left-color: #f59e0b;">
-                    <div class="job-top">
-                        <span class="company">Samartha International School</span>
-                        <span class="date">Mahabubnagar, India</span>
-                    </div>
-                    <span class="job-role">Partner & Board Member</span>
-                    <div class="job-desc">
-                        A premier educational institution building the foundation for future generations. My focus is on integrating technology and modern pedagogy to prepare students for a rapidly evolving world.
-                        <br>
-                        <a href="https://samarthaschool.co.in/" target="_blank" style="font-size: 0.85rem; color: var(--accent); margin-top: 5px; display: inline-block;">Visit Samartha International &rarr;</a>
+                    <div class="ec-item">
+                        <div class="ec-header">
+                            <span class="ec-company">Oracle USA</span>
+                            <span class="ec-title">Sr. Principal Consultant (2004-2007)</span>
+                        </div>
+                        <div class="ec-desc">Led end-to-end ERP implementations (GL, AP, AR, Supply Chain) for Fortune 500 clients. Expertise in R2R and P2P cycles.</div>
                     </div>
                 </div>
-
-                <div class="job-item" style="border-left-color: #ef4444;">
-                    <div class="job-top">
-                        <span class="company">Brickbots Robotics Inc.</span>
-                        <span class="date">San Francisco, CA</span>
-                    </div>
-                    <span class="job-role">Founder & Chairman</span>
-                    <div class="job-desc">
-                        My 501(c)(3) passion project. We partner with <strong>FIRST Robotics</strong> to democratize access to STEAM education. I coach students on manufacturing innovation and material science, helping them turn theoretical physics into moving machines.
-                    </div>
-                </div>
-
-                <div style="background: #f8fafc; padding: 25px; border-radius: 8px; border: 1px dashed #cbd5e1; margin-top: 30px;">
-                    <p class="narrative-text" style="margin-bottom: 0; font-style: italic; font-size: 1rem;">
-                        "I love to spend time building the future of technology, but even more so, I love coaching the humans who will wield it. Whether it's a founder hitting $1M ARR or a student building their first robot, my goal is the same: <strong>Build the people who build the future.</strong>"
-                    </p>
-                </div>
-
             </section>
 
         </div>
     </main>
 
     <script>
-        // Simple script to highlight active nav item on scroll
+        // Nav Highlighting
         const sections = document.querySelectorAll('section');
         const navLi = document.querySelectorAll('.nav-menu .nav-link');
 
