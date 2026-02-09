@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <title>Jayanth Madduru | Builder. Investor. Operator.</title>
-    <meta name="description" content="Personal portfolio of Jayanth Madduru. Architecting the Agentic Economy, investing in infrastructure, and building autonomous systems. Ex-Uber, Ex-Block.">
+    <meta name="description" content="Personal portfolio of Jayanth Madduru. Architecting the Agentic Economy. Ex-Uber, Ex-Block.">
     <meta name="robots" content="index, follow">
     
     <meta property="og:type" content="website">
@@ -57,7 +57,7 @@
         a { text-decoration: none; color: inherit; transition: 0.2s; cursor: pointer; }
         strong { font-weight: 700; color: #0f172a; }
 
-        /* --- MOBILE HEADER (Visible only on small screens) --- */
+        /* --- MOBILE HEADER --- */
         .mobile-header {
             display: none;
             position: fixed;
@@ -92,11 +92,10 @@
             transition: transform 0.3s ease;
         }
 
-        /* Custom Scrollbar for Sidebar */
+        /* Custom Scrollbar */
         .sidebar::-webkit-scrollbar { width: 6px; }
         .sidebar::-webkit-scrollbar-track { background: #0f172a; }
         .sidebar::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
-        .sidebar::-webkit-scrollbar-thumb:hover { background: #475569; }
 
         .profile-header { text-align: center; margin-bottom: 30px; }
         .profile-img {
@@ -128,14 +127,16 @@
         .nav-link {
             display: block;
             padding: 8px 0;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
             transition: all 0.2s ease;
         }
         .nav-link:hover { padding-left: 5px; color: var(--accent); }
-        .nav-link.active { color: var(--accent); font-weight: 600; padding-left: 5px; }
+        .nav-link.active { color: var(--accent); font-weight: 700; padding-left: 5px; }
 
-        /* Sidebar Section Header */
+        /* Sidebar Labels */
         .sidebar-label {
             font-size: 0.7rem; 
             text-transform: uppercase; 
@@ -146,7 +147,7 @@
             margin-top: 25px;
         }
 
-        /* Company List (Clickable now) */
+        /* Company List */
         .company-list { display: flex; flex-direction: column; gap: 0; }
         .company-link {
             display: block;
@@ -178,7 +179,7 @@
         .contact-links a { opacity: 0.6; margin: 0 5px; }
         .contact-links a:hover { opacity: 1; text-decoration: underline; }
 
-        /* --- MAIN CONTENT (Right) --- */
+        /* --- MAIN CONTENT --- */
         .main {
             margin-left: var(--sidebar-width);
             flex-grow: 1;
@@ -186,12 +187,12 @@
             max-width: 100%;
         }
         
-        .container { max-width: 850px; margin: 0 auto; padding: 80px 60px; }
+        .container { max-width: 850px; margin: 0 auto; padding: 100px 60px; }
 
         /* --- SECTIONS --- */
-        section { margin-bottom: 100px; scroll-margin-top: 80px; }
+        section { margin-bottom: 120px; scroll-margin-top: 80px; }
 
-        /* Hero Refined */
+        /* Hero */
         .hero-identity {
             font-size: 0.9rem;
             font-weight: 600;
@@ -214,40 +215,40 @@
         }
         
         .hero-text {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-secondary);
             max-width: 720px;
             font-weight: 400;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        /* Section Headings */
+        /* Section Headings (One Word) */
         .section-label {
-            font-size: 0.8rem;
+            font-size: 1rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
+            letter-spacing: 2px;
+            font-weight: 800;
             color: var(--text-muted);
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             display: block;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 5px;
         }
+        
         .section-intro {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--text-primary);
+            font-size: 1.1rem;
+            color: var(--text-secondary);
             margin-bottom: 40px;
-            max-width: 750px;
-            line-height: 1.5;
+            max-width: 700px;
         }
 
-        /* --- COMPONENTS --- */
-        
-        /* The "Now" Section */
-        .now-list { list-style: none; border-left: 2px solid var(--accent); padding-left: 20px; }
-        .now-item { margin-bottom: 15px; color: var(--text-secondary); font-size: 1rem; }
+        /* Focus / Now */
+        .now-list { list-style: none; border-left: 2px solid var(--border); padding-left: 25px; }
+        .now-item { margin-bottom: 15px; color: var(--text-secondary); font-size: 1.05rem; }
         .now-item strong { color: var(--text-primary); }
 
-        /* Cards Layout */
+        /* Cards */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
         .card {
             background: #fff;
@@ -263,7 +264,7 @@
         .card-body { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
         .card-meta { margin-top: 20px; font-size: 0.85rem; color: var(--text-secondary); border-top: 1px solid var(--border); padding-top: 15px; }
 
-        /* Digital Garden (Ideas) */
+        /* Signals / Garden */
         .garden-item { 
             margin-bottom: 25px; 
             padding-bottom: 25px; 
@@ -283,7 +284,7 @@
         .garden-date { font-size: 0.8rem; color: var(--text-muted); margin-left: auto; font-family: monospace; }
         .garden-desc { font-size: 0.95rem; color: var(--text-secondary); }
 
-        /* Architectural Record (Builds) */
+        /* Systems / Architectural Record */
         .build-item {
             display: grid;
             grid-template-columns: 180px 1fr;
@@ -306,13 +307,7 @@
         .tech-pill-container { display: flex; gap: 8px; flex-wrap: wrap; }
         .tech-pill { font-size: 0.75rem; background: #f1f5f9; padding: 4px 10px; border-radius: 4px; color: #64748b; font-weight: 500; border: 1px solid #e2e8f0; }
 
-        /* Foundation List */
-        .foundation-item { display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
-        .foundation-role { font-weight: 700; color: var(--text-primary); font-size: 1rem; }
-        .foundation-company { color: var(--text-secondary); font-size: 0.9rem; }
-        .foundation-date { font-family: monospace; font-size: 0.85rem; color: var(--text-muted); }
-
-        /* Footer CTA */
+        /* Footer */
         .footer-cta {
             background: #f8fafc;
             border: 1px solid var(--border);
@@ -336,7 +331,7 @@
             }
             .sidebar.active { transform: translateX(0); }
             
-            .main { margin-left: 0; padding-top: 60px; } /* Push content down for header */
+            .main { margin-left: 0; padding-top: 60px; } 
             .container { padding: 40px 20px; }
             
             .grid-2 { grid-template-columns: 1fr; }
@@ -346,7 +341,6 @@
             .build-stats { text-align: left; margin-bottom: 10px; border-left: 4px solid var(--accent); padding-left: 15px; }
             .stat-huge { font-size: 2rem; }
             
-            /* Overlay when sidebar is open */
             .overlay {
                 display: none;
                 position: fixed;
@@ -375,28 +369,27 @@
 
         <nav class="nav">
             <a href="#intro" class="nav-link">Manifesto</a>
-            <a href="#now" class="nav-link">Now</a>
-            <a href="#philosophy" class="nav-link">First Principles</a>
-            <a href="#builds" class="nav-link">Architectural Record</a>
-            <a href="#ventures" class="nav-link">The Ecosystem</a>
-            <a href="#garden" class="nav-link">Digital Garden</a>
+            <a href="#now" class="nav-link">Focus</a>
+            <a href="#ethos" class="nav-link">Ethos</a>
+            <a href="#systems" class="nav-link">Systems</a>
+            <a href="#ventures" class="nav-link">Ventures</a>
+            <a href="#signals" class="nav-link">Signals</a>
         </nav>
         
-        <div class="sidebar-label">Build History</div>
+        <div class="sidebar-label">Career History</div>
         <div class="company-list">
             <a href="#build-technet" class="company-link">Tech-Net</a>
             <a href="#build-convatec" class="company-link">Convatec</a>
             <a href="#build-block" class="company-link">Block (Cash App)</a>
             <a href="#build-uber" class="company-link">Uber</a>
-            <a href="#foundation" class="company-link">Early Career</a>
+            <span class="company-link" style="cursor: default;">Oracle / Silver Spring</span>
         </div>
 
         <a href="mailto:jayanthm@gmail.com" class="cta-button">Let's Build</a>
         
         <div class="contact-links">
             <a href="mailto:jayanthm@gmail.com">Email</a> • 
-            <a href="https://linkedin.com/in/jaymadduru">LinkedIn</a> • 
-            <a href="#">X / Twitter</a>
+            <a href="https://linkedin.com/in/jaymadduru">LinkedIn</a>
         </div>
     </aside>
 
@@ -423,7 +416,7 @@
             </section>
 
             <section id="now">
-                <span class="section-label">What I'm Doing Now</span>
+                <span class="section-label">Focus</span>
                 <ul class="now-list">
                     <li class="now-item"><strong>Building:</strong> Agentic swarms for Enterprise at Tech-Net.</li>
                     <li class="now-item"><strong>Investing:</strong> Scouting pre-seed founders in Robotics and Vertical AI.</li>
@@ -431,8 +424,8 @@
                 </ul>
             </section>
 
-            <section id="philosophy">
-                <span class="section-label">First Principles</span>
+            <section id="ethos">
+                <span class="section-label">Ethos</span>
                 <p class="section-intro">
                     We are shifting from software that knows to systems that act. My leadership is built on four pillars of consequence:
                 </p>
@@ -460,10 +453,10 @@
                 </div>
             </section>
 
-            <section id="builds">
-                <span class="section-label">Architectural Record</span>
+            <section id="systems">
+                <span class="section-label">Systems</span>
                 <p class="section-intro">
-                    A catalog of proprietary systems built to solve "impossible" problems at scale.
+                    A catalog of proprietary engines built to solve "impossible" problems at scale.
                 </p>
 
                 <div class="build-item" id="build-uber">
@@ -544,7 +537,7 @@
             </section>
 
             <section id="ventures">
-                <span class="section-label">The Ecosystem</span>
+                <span class="section-label">Ventures</span>
                 <p class="section-intro">
                     I allocate capital and build engines of creation.
                 </p>
@@ -573,8 +566,8 @@
                 </div>
             </section>
 
-            <section id="garden">
-                <span class="section-label">Digital Garden</span>
+            <section id="signals">
+                <span class="section-label">Signals</span>
                 <p class="section-intro">Living notes and seedlings for future architectures.</p>
                 
                 <div class="garden-item">
@@ -593,34 +586,6 @@
                         <span class="garden-date">Dec 2025</span>
                     </div>
                     <p class="garden-desc">In regulated industries, we can't rely on human review for AI output. We need deterministic guardrails embedded in the model context itself.</p>
-                </div>
-            </section>
-
-            <section id="foundation">
-                <span class="section-label">Bedrock</span>
-                
-                <div class="foundation-item">
-                    <div>
-                        <div class="foundation-role">Silver Spring Networks (IoT)</div>
-                        <div class="foundation-company">Managed $400M Smart Grid Deals</div>
-                    </div>
-                    <div class="foundation-date">2010 - 2016</div>
-                </div>
-
-                <div class="foundation-item">
-                    <div>
-                        <div class="foundation-role">SVS Solutions</div>
-                        <div class="foundation-company">Co-Founder & CEO (Acquired)</div>
-                    </div>
-                    <div class="foundation-date">2008 - 2010</div>
-                </div>
-
-                <div class="foundation-item">
-                    <div>
-                        <div class="foundation-role">Oracle USA</div>
-                        <div class="foundation-company">Sr. Principal Consultant</div>
-                    </div>
-                    <div class="foundation-date">2006 - 2008</div>
                 </div>
             </section>
 
