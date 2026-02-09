@@ -12,14 +12,14 @@
     <style>
         /* --- DESIGN TOKENS --- */
         :root {
-            /* Dark Sidebar Variables */
+            /* Sidebar Variables */
             --bg-sidebar: #0f172a;
             --text-sidebar: #94a3b8;
             --text-sidebar-head: #f8fafc;
             
             /* Main Content Variables */
             --bg-main: #ffffff;
-            --text-primary: #0f172a; /* Darker, sharper text */
+            --text-primary: #0f172a; 
             --text-secondary: #475569;
             --text-muted: #94a3b8;
             
@@ -62,7 +62,7 @@
             z-index: 100;
         }
 
-        .profile-header { text-align: center; margin-bottom: 40px; }
+        .profile-header { text-align: center; margin-bottom: 30px; }
         .profile-img {
             width: 130px;
             height: 130px;
@@ -87,7 +87,7 @@
         }
 
         /* Navigation */
-        .nav { margin-bottom: auto; }
+        .nav { margin-bottom: 40px; }
         .nav-link {
             display: block;
             padding: 10px 0;
@@ -95,20 +95,41 @@
             border-bottom: 1px solid rgba(255,255,255,0.05);
             transition: all 0.2s ease;
         }
-        .nav-link:hover { color: #fff; padding-left: 5px; color: var(--accent); }
-        .nav-link.active { color: #fff; font-weight: 600; color: var(--accent); }
+        .nav-link:hover { padding-left: 5px; color: var(--accent); }
+        .nav-link.active { color: var(--accent); font-weight: 600; }
 
-        /* Sidebar Footer */
-        .sidebar-footer { margin-top: 40px; }
-        .skill-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+        /* Sidebar Section Header */
+        .sidebar-label {
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            color: #64748b; 
+            margin-bottom: 10px; 
+            font-weight: 700;
+            margin-top: 30px;
+        }
+
+        /* Company List */
+        .company-list { display: flex; flex-direction: column; gap: 8px; }
+        .company-tag {
+            display: block;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            padding: 4px 0;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+        }
+
+        /* Skills */
+        .skill-list { display: flex; flex-wrap: wrap; gap: 6px; }
         .skill-tag {
             font-size: 0.7rem;
             background: rgba(255,255,255,0.08);
             padding: 4px 8px;
             border-radius: 4px;
-            color: #cbd5e1;
+            color: #94a3b8;
         }
-        .contact-links { margin-top: 25px; font-size: 0.85rem; }
+
+        .contact-links { margin-top: 40px; font-size: 0.85rem; }
         .contact-links a { display: block; margin-bottom: 6px; opacity: 0.7; }
         .contact-links a:hover { opacity: 1; color: var(--accent); }
 
@@ -148,22 +169,11 @@
         }
         
         .hero-text {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-secondary);
             max-width: 720px;
             font-weight: 400;
             line-height: 1.7;
-        }
-
-        .hero-badges { display: flex; gap: 10px; margin-top: 35px; flex-wrap: wrap; }
-        .badge { 
-            border: 1px solid var(--border); 
-            padding: 6px 14px; 
-            border-radius: 6px; 
-            font-size: 0.85rem; 
-            font-weight: 600; 
-            color: var(--text-primary);
-            background: #fff;
         }
 
         /* Section Headings */
@@ -265,24 +275,31 @@
         <nav class="nav">
             <a href="#intro" class="nav-link">The Identity</a>
             <a href="#philosophy" class="nav-link">The Philosophy</a>
-            <a href="#ventures" class="nav-link">Capital & Community</a>
+            <a href="#ventures" class="nav-link">Venture & Acceleration</a>
             <a href="#missions" class="nav-link">Selected Missions</a>
             <a href="#foundation" class="nav-link">The Foundation</a>
         </nav>
+        
+        <div class="sidebar-label">Career History</div>
+        <div class="company-list">
+            <span class="company-tag">Tech-Net</span>
+            <span class="company-tag">Convatec</span>
+            <span class="company-tag">Block (Cash App)</span>
+            <span class="company-tag">Uber</span>
+            <span class="company-tag">Oracle</span>
+        </div>
 
-        <div class="sidebar-footer">
-            <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 10px; font-weight: 700;">Core Domains</div>
-            <div class="skill-list">
-                <span class="skill-tag">Agentic AI</span>
-                <span class="skill-tag">Fintech Infra</span>
-                <span class="skill-tag">SaMD</span>
-                <span class="skill-tag">Robotics</span>
-            </div>
-            
-            <div class="contact-links">
-                <a href="mailto:jayanthm@gmail.com">jayanthm@gmail.com</a>
-                <a href="https://linkedin.com/in/jaymadduru">LinkedIn Profile</a>
-            </div>
+        <div class="sidebar-label">Core Domains</div>
+        <div class="skill-list">
+            <span class="skill-tag">Agentic AI</span>
+            <span class="skill-tag">Fintech Infra</span>
+            <span class="skill-tag">SaMD</span>
+            <span class="skill-tag">Robotics</span>
+        </div>
+        
+        <div class="contact-links">
+            <a href="mailto:jayanthm@gmail.com">jayanthm@gmail.com</a>
+            <a href="https://linkedin.com/in/jaymadduru">LinkedIn Profile</a>
         </div>
     </aside>
 
@@ -299,76 +316,70 @@
                 </div>
                 
                 <h2 class="hero-heading">
-                    I bridge the gap between<br>human intent and machine execution.
+                    Turning Digital Intelligence into<br>
+                    <span style="color: var(--accent);">Physical Consequence.</span>
                 </h2>
                 
                 <p class="hero-text">
-                    For over 20 years, I’ve architected platforms that move billions of dollars (Uber, Block) and systems that save lives (Convatec). I don’t just manage products; I build the technical and cultural engines that allow innovation to scale.
+                    The future isn't just about models; it's about movement. Whether it's moving billions of dollars or autonomous machines, I engineer the complex infrastructure that allows human ambition to scale.
                 </p>
-                
-                <div class="hero-badges">
-                    <span class="badge">Uber</span>
-                    <span class="badge">Block</span>
-                    <span class="badge">Oracle</span>
-                    <span class="badge">Founder</span>
-                </div>
             </section>
 
             <section id="philosophy">
                 <span class="section-label">My Philosophy</span>
                 <p class="section-intro">
-                    We are entering the era of <strong>Agentic AI</strong>. Software no longer just retrieves information; it takes action. My leadership is defined by four core tenets:
+                    We are shifting from software that knows to systems that act. My leadership is built on four pillars of consequence:
                 </p>
                 <div class="grid-2">
                     <div class="card">
-                        <span class="card-icon">🤖</span>
-                        <div class="card-title">Beyond Chatbots</div>
-                        <p class="card-body">Static RAG is the past. I build <strong>Agentic Workflows</strong> using MCP and multi-agent swarms that autonomously plan and execute complex tasks.</p>
+                        <span class="card-icon">⚡</span>
+                        <div class="card-title">Agentic Force</div>
+                        <p class="card-body">Intelligence is useless without agency. I build <strong>Autonomous Swarms</strong> that don't just answer questions—they execute workflows, trade assets, and govern outcomes.</p>
                     </div>
                     <div class="card">
-                        <span class="card-icon">🛡️</span>
-                        <div class="card-title">Safety is the Product</div>
-                        <p class="card-body">In healthcare and fintech, "move fast and break things" doesn't work. I champion <strong>HITL (Human-in-the-Loop)</strong> governance for regulated AI.</p>
+                        <span class="card-icon">⚖️</span>
+                        <div class="card-title">Governed Scale</div>
+                        <p class="card-body">Compliance isn't a brake; it's the rails. I treat <strong>Risk & Governance</strong> as essential infrastructure that allows Fintech and MedTech to run at maximum velocity.</p>
                     </div>
                     <div class="card">
-                        <span class="card-icon">🚀</span>
-                        <div class="card-title">0-to-1 Velocity</div>
-                        <p class="card-body">Big companies move slow because of fear. I bring startup velocity to enterprise scales, delivering MVPs (like Cogen) in <strong>3 months, not 12</strong>.</p>
+                        <span class="card-icon">🏗️</span>
+                        <div class="card-title">Embodied Tech</div>
+                        <p class="card-body">Code must touch the real world. From <strong>Robotics</strong> to <strong>IoT Grids</strong>, I focus on the intersection where digital logic meets physical reality.</p>
                     </div>
                     <div class="card">
-                        <span class="card-icon">🧠</span>
-                        <div class="card-title">First Principles</div>
-                        <p class="card-body">I am an engineer by trade. I dive deep into the stack (LangChain, Azure, Databricks, Subledgers) to know what's truly possible.</p>
+                        <span class="card-icon">🌐</span>
+                        <div class="card-title">Venture Velocity</div>
+                        <p class="card-body">I don't just ship products; I build companies. My approach brings <strong>Venture Capital speed</strong> (0-to-1) to Enterprise scale (1-to-N).</p>
                     </div>
                 </div>
             </section>
 
             <section id="ventures">
-                <span class="section-label">Capital & Community</span>
+                <span class="section-label">Venture & Acceleration</span>
                 <p class="section-intro">
-                    I believe in building the future on two fronts: <strong>Capital Allocation</strong> for high-growth tech, and <strong>Education</strong> for the next generation of human talent.
+                    I allocate capital and build engines of creation. My goal is to democratize access to the tools, capital, and infrastructure that builders need.
                 </p>
                 <div class="grid-2">
                     <div class="card" style="border-top: 4px solid #10b981;">
-                        <div class="card-title">The Investor</div>
+                        <div class="card-title">The Capital</div>
                         <p class="card-body">
-                            <strong>Northwest & uFin Capital:</strong> General Partner. Leading syndicates of operators to back high-conviction startups.
+                            <strong>Northwest & uFin Capital:</strong> General Partner. Leading syndicates of technical operators to back high-conviction founders.
                         </p>
                         <div class="card-meta">
                             <strong>🦄 Hivel.ai:</strong> First check writer ($0 to $1M+ ARR).<br>
-                            <strong>☕ Affogato.ai:</strong> Guided pivot to AI Security.<br>
-                            <strong>🌏 Loanyantra:</strong> Angel Investor (Fintech).
+                            <strong>☕ Affogato.ai:</strong> Guided pivot to AI Ad Agents.<br>
+                            <strong>🌏 Loanyantra:</strong> Fintech Angel Investor.
                         </div>
                     </div>
 
                     <div class="card" style="border-top: 4px solid #f59e0b;">
-                        <div class="card-title">The Educator</div>
+                        <div class="card-title">The Accelerators</div>
                         <p class="card-body">
-                            <strong>Building the builders.</strong> My focus is on integrating technology and modern pedagogy to prepare students for a rapidly evolving world.
+                            <strong>Incubating talent and technology.</strong> Creating the physical and intellectual space for the next generation of engineers to build hard things.
                         </p>
                         <div class="card-meta">
-                            <strong>🏫 Samartha International School:</strong> Partner & Board.<br>
-                            <strong>🤖 Brickbots Robotics:</strong> Founder (FIRST Robotics).
+                            <strong>🤖 Brickbots Robotics:</strong> Hardware Accelerator. Democratizing access to manufacturing & engineering.<br>
+                            <strong>🚀 Samartha International:</strong> Talent Incubation. Preparing future builders.
                         </div>
                     </div>
                 </div>
