@@ -212,38 +212,28 @@
         .card-meta { margin-top: 20px; font-size: 0.85rem; color: var(--text-secondary); border-top: 1px solid var(--border); padding-top: 15px; }
         .card-meta strong { color: var(--text-primary); }
 
-        /* Mission Cards (Experience) */
-        .mission-card {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--text-muted);
-            border-radius: 6px;
-            padding: 35px;
-            margin-bottom: 30px;
-            transition: 0.2s;
+        /* BUILD RECORD (New Creative Section) */
+        .build-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
         }
-        .mission-card:hover { border-left-color: var(--accent); box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        .build-item:last-child { border-bottom: none; }
         
-        .mission-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .mission-company { font-size: 1.5rem; font-weight: 800; color: var(--text-primary); letter-spacing: -0.5px; }
-        .mission-tag { 
-            font-size: 0.75rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            background: var(--accent-bg); 
-            color: var(--accent); 
-            padding: 4px 10px; 
-            border-radius: 4px; 
-            font-weight: 700; 
-        }
+        .build-stats { text-align: right; }
+        .stat-huge { display: block; font-size: 2.5rem; font-weight: 800; color: var(--text-primary); line-height: 1; letter-spacing: -1px; }
+        .stat-context { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 600; margin-top: 5px; display: block;}
         
-        .mission-title { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; display: block; }
-        .mission-body { font-size: 1rem; color: var(--text-secondary); margin-bottom: 25px; }
+        .build-content { padding-top: 5px; }
+        .build-system-name { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
+        .build-company { font-family: monospace; color: var(--accent); font-size: 0.9rem; margin-bottom: 15px; display: block; }
+        .build-desc { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 20px; max-width: 600px; }
         
-        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
-        .metric { background: #f8fafc; padding: 12px 15px; border-radius: 6px; border: 1px solid var(--border); }
-        .metric-val { display: block; font-size: 1.25rem; font-weight: 800; color: var(--text-primary); margin-bottom: 2px; }
-        .metric-lbl { font-size: 0.8rem; color: var(--text-secondary); font-weight: 500; }
+        .tech-pill-container { display: flex; gap: 8px; flex-wrap: wrap; }
+        .tech-pill { font-size: 0.75rem; background: #f1f5f9; padding: 4px 10px; border-radius: 4px; color: #64748b; font-weight: 500; border: 1px solid #e2e8f0; }
 
         /* Foundation List */
         .foundation-item { display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
@@ -259,7 +249,9 @@
             .container { padding: 50px 20px; }
             .grid-2 { grid-template-columns: 1fr; }
             .hero-heading { font-size: 2.2rem; }
-            .metric-grid { grid-template-columns: 1fr 1fr; }
+            .build-item { grid-template-columns: 1fr; gap: 10px; }
+            .build-stats { text-align: left; margin-bottom: 10px; }
+            .stat-huge { font-size: 2rem; }
         }
     </style>
 </head>
@@ -273,11 +265,11 @@
         </div>
 
         <nav class="nav">
-            <a href="#intro" class="nav-link">The Identity</a>
-            <a href="#philosophy" class="nav-link">The Philosophy</a>
-            <a href="#ventures" class="nav-link">Venture & Acceleration</a>
-            <a href="#missions" class="nav-link">Selected Missions</a>
-            <a href="#foundation" class="nav-link">The Foundation</a>
+            <a href="#intro" class="nav-link">Manifesto</a>
+            <a href="#philosophy" class="nav-link">First Principles</a>
+            <a href="#builds" class="nav-link">Architectural Record</a>
+            <a href="#ventures" class="nav-link">The Ecosystem</a>
+            <a href="#foundation" class="nav-link">Bedrock</a>
         </nav>
         
         <div class="sidebar-label">Career History</div>
@@ -326,7 +318,7 @@
             </section>
 
             <section id="philosophy">
-                <span class="section-label">My Philosophy</span>
+                <span class="section-label">First Principles</span>
                 <p class="section-intro">
                     We are shifting from software that knows to systems that act. My leadership is built on four pillars of consequence:
                 </p>
@@ -354,8 +346,91 @@
                 </div>
             </section>
 
+            <section id="builds">
+                <span class="section-label">Architectural Record</span>
+                <p class="section-intro">
+                    A catalog of proprietary systems built to solve "impossible" problems at scale.
+                </p>
+
+                <div class="build-item">
+                    <div class="build-stats">
+                        <span class="stat-huge">320M</span>
+                        <span class="stat-context">Daily Events</span>
+                    </div>
+                    <div class="build-content">
+                        <div class="build-system-name">The Financial Nervous System</div>
+                        [cite_start]<span class="build-company">Deployed at UBER [cite: 9]</span>
+                        <p class="build-desc">
+                            <strong>System Name: Arthika.</strong> A real-time external subledger handling money movement across 60 countries. We treated Profitability as an ML "Objective Function" to optimize unit economics at the transaction level.
+                        </p>
+                        <div class="tech-pill-container">
+                            <span class="tech-pill">External Subledger</span>
+                            <span class="tech-pill">Microservices</span>
+                            <span class="tech-pill">80% Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="build-item">
+                    <div class="build-stats">
+                        <span class="stat-huge">50%</span>
+                        <span class="stat-context">Accuracy Lift</span>
+                    </div>
+                    <div class="build-content">
+                        <div class="build-system-name">The Trust Engine</div>
+                        <span class="build-company">Deployed at BLOCK (Cash App)</span>
+                        <p class="build-desc">
+                            Solving the "Risk vs. Growth" paradox. I overhauled the data stack to deploy real-time Deep Learning models, securing billions in P2P volume while reducing good-user friction by 30%.
+                        </p>
+                        <div class="tech-pill-container">
+                            <span class="tech-pill">Deep Learning</span>
+                            <span class="tech-pill">Snowflake/Airflow</span>
+                            <span class="tech-pill">Real-time Risk</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="build-item">
+                    <div class="build-stats">
+                        <span class="stat-huge">Agentic</span>
+                        <span class="stat-context">Architecture</span>
+                    </div>
+                    <div class="build-content">
+                        <div class="build-system-name">The Autonomy Shift</div>
+                        <span class="build-company">Deployed at TECH-NET</span>
+                        <p class="build-desc">
+                            <strong>System Name: Worflown.</strong> Moving the enterprise from static Chatbots to Autonomous Agents. We utilized the Model Context Protocol (MCP) to create multi-agent swarms that execute complex utility workflows.
+                        </p>
+                        <div class="tech-pill-container">
+                            <span class="tech-pill">Multi-Agent Systems</span>
+                            <span class="tech-pill">MCP Standard</span>
+                            <span class="tech-pill">20% Rev Growth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="build-item">
+                    <div class="build-stats">
+                        <span class="stat-huge">3 Mo</span>
+                        <span class="stat-context">Zero to MVP</span>
+                    </div>
+                    <div class="build-content">
+                        <div class="build-system-name">The Velocity Protocol</div>
+                        <span class="build-company">Deployed at CONVATEC</span>
+                        <p class="build-desc">
+                            <strong>System Name: Cogen.</strong> Proving that Regulated AI can move fast. We built a HIPAA-compliant GenAI platform on Azure from whiteboard to production in 90 days.
+                        </p>
+                        <div class="tech-pill-container">
+                            <span class="tech-pill">SaMD (Medical Device)</span>
+                            <span class="tech-pill">Azure OpenAI</span>
+                            <span class="tech-pill">HIPAA/GDPR</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section id="ventures">
-                <span class="section-label">Venture & Acceleration</span>
+                <span class="section-label">The Ecosystem</span>
                 <p class="section-intro">
                     I allocate capital and build engines of creation. My goal is to democratize access to the tools, capital, and infrastructure that builders need.
                 </p>
@@ -367,7 +442,7 @@
                         </p>
                         <div class="card-meta">
                             <strong>🦄 Hivel.ai:</strong> First check writer ($0 to $1M+ ARR).<br>
-                            <strong>☕ Affogato.ai:</strong> Guided pivot to AI Ad Agents.<br>
+                            <strong>🤖 Affogato.ai:</strong> Guided pivot to AI Ad Agents.<br>
                             <strong>🌏 Loanyantra:</strong> Fintech Angel Investor.
                         </div>
                     </div>
@@ -385,111 +460,8 @@
                 </div>
             </section>
 
-            <section id="missions">
-                <span class="section-label">Selected Missions</span>
-                <p class="section-intro">
-                    I don't just hold roles; I accept missions. Here are four times I was asked to solve a problem that didn't have a playbook.
-                </p>
-
-                <div class="mission-card">
-                    <div class="mission-header">
-                        <h3 class="mission-company">Tech-Net, Inc.</h3>
-                        <span class="mission-tag">The Agentic Shift</span>
-                    </div>
-                    <span class="mission-title">From Static Tools to Autonomous Agents</span>
-                    <p class="mission-body">
-                        The enterprise world is stuck in "Chatbot" mode. My mission was to break through to true autonomy. I incubated and launched <strong>"Worflown,"</strong> an AI suite that moved our clients from simple retrieval to Agentic Workflows.
-                    </p>
-                    <div class="metric-grid">
-                        <div class="metric">
-                            <span class="metric-val">20%</span>
-                            <span class="metric-lbl">YoY Revenue Increase</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-val">40%</span>
-                            <span class="metric-lbl">Client Cost Reduction</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-val">12+</span>
-                            <span class="metric-lbl">MCP Integrations</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mission-card">
-                    <div class="mission-header">
-                        <h3 class="mission-company">Convatec</h3>
-                        <span class="mission-tag">Velocity in Regulation</span>
-                    </div>
-                    <span class="mission-title">Breaking the "Compliance Paralysis"</span>
-                    <p class="mission-body">
-                        In MedTech, innovation usually dies in compliance reviews. I was brought in to prove that HIPAA-compliant SaMD could move at startup speed. I architected the "Cogen" GenAI platform on Azure.
-                    </p>
-                    <div class="metric-grid">
-                        <div class="metric">
-                            <span class="metric-val">3 Months</span>
-                            <span class="metric-lbl">Concept to Production</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-val">100%</span>
-                            <span class="metric-lbl">HIPAA & GDPR Compliant</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mission-card">
-                    <div class="mission-header">
-                        <h3 class="mission-company">Block (Cash App)</h3>
-                        <span class="mission-tag">Trust at Scale</span>
-                    </div>
-                    <span class="mission-title">Solving the "Risk vs. Growth" Paradox</span>
-                    <p class="mission-body">
-                        At Cash App scale, fraud detection often kills user growth. I led the "Performance Platform" team to overhaul our data stack (Snowflake/Airflow) and deploy real-time Deep Learning models.
-                    </p>
-                    <div class="metric-grid">
-                        <div class="metric">
-                            <span class="metric-val">50%</span>
-                            <span class="metric-lbl">Fraud Accuracy Lift</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-val">30%</span>
-                            <span class="metric-lbl">Faster User Adoption</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-val">Billions</span>
-                            <span class="metric-lbl">Secured P2P Volume</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mission-card">
-                    <div class="mission-header">
-                        <h3 class="mission-company">Uber</h3>
-                        <span class="mission-tag">The Nervous System</span>
-                    </div>
-                    <span class="mission-title">Building the Financial Engine of the World</span>
-                    <p class="mission-body">
-                        Uber wasn't just moving people; it was moving money across 60 countries. I built <strong>"Arthika,"</strong> the financial nervous system (External Subledger) that processed 320 million daily events. We treated profitability as a machine learning "Objective Function."
-                    </p>
-                    <div class="metric-grid">
-                        <div class="metric">
-                            <span class="metric-val">80%</span>
-                            <span class="metric-lbl">Billing Automation</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-val">99.99%</span>
-                            <span class="metric-lbl">Timeliness Accuracy</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-val">100%</span>
-                            <span class="metric-lbl">Self-Serve Conversion</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section id="foundation">
-                <span class="section-label">The Foundation</span>
+                <span class="section-label">Bedrock</span>
                 <p class="section-intro">Before the unicorn era, I cut my teeth on the hard plumbing of the enterprise.</p>
                 
                 <div class="foundation-item">
