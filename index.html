@@ -6,15 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <title>Jayanth Madduru | Builder. Investor. Operator.</title>
-    <meta name="description" content="Personal portfolio of Jayanth Madduru. Architecting the Agentic Economy. Ex-Uber, Ex-Block.">
+    <meta name="description" content="Personal portfolio of Jayanth Madduru. Engineering the Architecture of Action. Ex-Uber, Ex-Block.">
     <meta name="robots" content="index, follow">
     
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Jayanth Madduru | The Agentic Economy">
-    <meta property="og:description" content="Turning Digital Intelligence into Physical Consequence. Builder, Investor, Operator.">
-    <meta property="og:image" content="profile_pic.jpeg">
-    <meta property="og:url" content="https://jaymadduru.github.io">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,19 +16,17 @@
     <style>
         /* --- DESIGN TOKENS --- */
         :root {
-            /* Sidebar Variables */
             --bg-sidebar: #0f172a;
             --text-sidebar: #94a3b8;
             --text-sidebar-head: #f8fafc;
             --sidebar-width: 300px;
             
-            /* Main Content Variables */
             --bg-main: #ffffff;
             --text-primary: #0f172a; 
             --text-secondary: #475569;
             --text-muted: #94a3b8;
             
-            --accent: #2563eb; /* Royal Blue */
+            --accent: #2563eb; 
             --accent-bg: #eff6ff;
             --border: #e2e8f0;
             
@@ -75,7 +67,7 @@
         .mobile-logo { color: #fff; font-weight: 700; font-size: 1.1rem; }
         .hamburger { background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
 
-        /* --- SIDEBAR (Fixed Left) --- */
+        /* --- SIDEBAR --- */
         .sidebar {
             width: var(--sidebar-width);
             background: var(--bg-sidebar);
@@ -91,8 +83,6 @@
             z-index: 900;
             transition: transform 0.3s ease;
         }
-
-        /* Custom Scrollbar */
         .sidebar::-webkit-scrollbar { width: 6px; }
         .sidebar::-webkit-scrollbar-track { background: #0f172a; }
         .sidebar::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
@@ -106,248 +96,101 @@
             border: 3px solid rgba(255,255,255,0.1);
             margin-bottom: 15px;
         }
-        .profile-name { 
-            font-size: 1.4rem; 
-            font-weight: 700;
-            color: var(--text-sidebar-head); 
-            margin-bottom: 5px; 
-            letter-spacing: -0.5px;
-            line-height: 1.2;
-        }
-        .profile-title {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--accent);
-            font-weight: 600;
-        }
+        .profile-name { font-size: 1.4rem; font-weight: 700; color: var(--text-sidebar-head); margin-bottom: 5px; letter-spacing: -0.5px; line-height: 1.2; }
+        .profile-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; }
 
-        /* Navigation */
         .nav { margin-bottom: 30px; }
-        .nav-link {
-            display: block;
-            padding: 8px 0;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.2s ease;
-        }
+        .nav-link { display: block; padding: 8px 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.2s ease; }
         .nav-link:hover { padding-left: 5px; color: var(--accent); }
         .nav-link.active { color: var(--accent); font-weight: 700; padding-left: 5px; }
 
-        /* Sidebar Labels */
-        .sidebar-label {
-            font-size: 0.7rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            color: #64748b; 
-            margin-bottom: 10px; 
-            font-weight: 700;
-            margin-top: 25px;
-        }
-
-        /* Company List */
+        .sidebar-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 10px; font-weight: 700; margin-top: 25px; }
+        
         .company-list { display: flex; flex-direction: column; gap: 0; }
-        .company-link {
-            display: block;
-            font-size: 0.85rem;
-            color: #cbd5e1;
-            padding: 6px 0;
-            border-bottom: 1px dashed rgba(255,255,255,0.1);
-            opacity: 0.8;
-        }
+        .company-link { display: block; font-size: 0.85rem; color: #cbd5e1; padding: 6px 0; border-bottom: 1px dashed rgba(255,255,255,0.1); opacity: 0.8; }
         .company-link:hover { opacity: 1; color: #fff; padding-left: 3px; }
 
-        /* CTA Button */
-        .cta-button {
-            display: block;
-            margin-top: 30px;
-            background: var(--accent);
-            color: white;
-            text-align: center;
-            padding: 12px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.2s;
-        }
+        .cta-button { display: block; margin-top: 30px; background: var(--accent); color: white; text-align: center; padding: 12px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
         .cta-button:hover { background: #1d4ed8; }
 
-        /* Contact Links */
         .contact-links { margin-top: 20px; font-size: 0.8rem; text-align: center; }
         .contact-links a { opacity: 0.6; margin: 0 5px; }
         .contact-links a:hover { opacity: 1; text-decoration: underline; }
 
         /* --- MAIN CONTENT --- */
-        .main {
-            margin-left: var(--sidebar-width);
-            flex-grow: 1;
-            padding: 0;
-            max-width: 100%;
-        }
-        
+        .main { margin-left: var(--sidebar-width); flex-grow: 1; padding: 0; max-width: 100%; }
         .container { max-width: 850px; margin: 0 auto; padding: 100px 60px; }
-
-        /* --- SECTIONS --- */
         section { margin-bottom: 120px; scroll-margin-top: 80px; }
 
-        /* Hero */
-        .hero-identity {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+        /* HERO - VISIONARY */
+        .hero-identity { font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
         .identity-dot { width: 4px; height: 4px; background: var(--accent); border-radius: 50%; }
 
-        .hero-heading {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.1;
-            color: var(--text-primary);
-            letter-spacing: -1px;
-            margin-bottom: 25px;
-        }
+        .hero-heading { font-size: 3.5rem; font-weight: 800; line-height: 1.05; color: var(--text-primary); letter-spacing: -1.5px; margin-bottom: 25px; }
         
-        .hero-text {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            max-width: 720px;
-            font-weight: 400;
-            line-height: 1.6;
-        }
+        /* The Trinity Line */
+        .hero-trinity { font-size: 1rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px; border-left: 4px solid var(--text-primary); padding-left: 15px; }
 
-        /* Section Headings (One Word) */
-        .section-label {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 800;
-            color: var(--text-muted);
-            margin-bottom: 25px;
-            display: block;
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-        
-        .section-intro {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            max-width: 700px;
-        }
+        .hero-text { font-size: 1.25rem; color: var(--text-secondary); max-width: 720px; font-weight: 400; line-height: 1.6; }
 
-        /* Focus / Now */
+        /* HEADINGS */
+        .section-label { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; color: var(--text-muted); margin-bottom: 25px; display: inline-block; border-bottom: 2px solid var(--accent); padding-bottom: 5px; }
+        .section-intro { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px; max-width: 700px; }
+
+        /* LISTS & CARDS */
         .now-list { list-style: none; border-left: 2px solid var(--border); padding-left: 25px; }
         .now-item { margin-bottom: 15px; color: var(--text-secondary); font-size: 1.05rem; }
         .now-item strong { color: var(--text-primary); }
 
-        /* Cards */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .card {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 30px;
-            transition: all 0.2s ease;
-            height: 100%;
-        }
+        .card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 30px; transition: all 0.2s ease; height: 100%; }
         .card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.04); border-color: var(--accent); }
         .card-icon { font-size: 1.8rem; margin-bottom: 15px; display: block; }
         .card-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--text-primary); }
         .card-body { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
         .card-meta { margin-top: 20px; font-size: 0.85rem; color: var(--text-secondary); border-top: 1px solid var(--border); padding-top: 15px; }
 
-        /* Signals / Garden */
-        .garden-item { 
-            margin-bottom: 25px; 
-            padding-bottom: 25px; 
-            border-bottom: 1px solid var(--border); 
-        }
+        /* ACCELERATOR FOCUS TAGS */
+        .focus-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 700; margin-top: 20px; margin-bottom: 10px; display: block; }
+        .thesis-list { display: flex; flex-wrap: wrap; gap: 8px; }
+        .thesis-tag { font-size: 0.75rem; background: #fffbeb; color: #b45309; padding: 4px 10px; border-radius: 4px; font-weight: 600; border: 1px solid #fcd34d; }
+
+        /* SYSTEMS & GARDEN */
+        .garden-item { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid var(--border); }
         .garden-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
         .garden-title { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
-        .garden-tag { 
-            font-size: 0.7rem; 
-            background: #ecfdf5; 
-            color: #059669; 
-            padding: 2px 8px; 
-            border-radius: 10px; 
-            font-weight: 600; 
-            border: 1px solid #d1fae5;
-        }
+        .garden-tag { font-size: 0.7rem; background: #ecfdf5; color: #059669; padding: 2px 8px; border-radius: 10px; font-weight: 600; border: 1px solid #d1fae5; }
         .garden-date { font-size: 0.8rem; color: var(--text-muted); margin-left: auto; font-family: monospace; }
         .garden-desc { font-size: 0.95rem; color: var(--text-secondary); }
 
-        /* Systems / Architectural Record */
-        .build-item {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid var(--border);
-        }
+        .build-item { display: grid; grid-template-columns: 180px 1fr; gap: 30px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
         .build-item:last-child { border-bottom: none; }
-        
         .build-stats { text-align: right; }
         .stat-huge { display: block; font-size: 2.5rem; font-weight: 800; color: var(--text-primary); line-height: 1; letter-spacing: -1px; }
         .stat-context { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 600; margin-top: 5px; display: block;}
-        
         .build-content { padding-top: 5px; }
         .build-system-name { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
         .build-company { font-family: monospace; color: var(--accent); font-size: 0.9rem; margin-bottom: 15px; display: block; font-weight: 600; }
         .build-desc { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 20px; max-width: 600px; }
-        
         .tech-pill-container { display: flex; gap: 8px; flex-wrap: wrap; }
         .tech-pill { font-size: 0.75rem; background: #f1f5f9; padding: 4px 10px; border-radius: 4px; color: #64748b; font-weight: 500; border: 1px solid #e2e8f0; }
 
-        /* Footer */
-        .footer-cta {
-            background: #f8fafc;
-            border: 1px solid var(--border);
-            padding: 40px;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 80px;
-        }
+        .footer-cta { background: #f8fafc; border: 1px solid var(--border); padding: 40px; border-radius: 12px; text-align: center; margin-top: 80px; }
         .footer-title { font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 10px; }
         .footer-text { margin-bottom: 25px; color: var(--text-secondary); }
 
-        /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 900px) {
             .mobile-header { display: flex; }
-            
-            .sidebar { 
-                transform: translateX(-100%); 
-                width: 85%;
-                z-index: 1001;
-                box-shadow: 10px 0 30px rgba(0,0,0,0.5);
-            }
+            .sidebar { transform: translateX(-100%); width: 85%; z-index: 1001; box-shadow: 10px 0 30px rgba(0,0,0,0.5); }
             .sidebar.active { transform: translateX(0); }
-            
             .main { margin-left: 0; padding-top: 60px; } 
             .container { padding: 40px 20px; }
-            
             .grid-2 { grid-template-columns: 1fr; }
             .hero-heading { font-size: 2.2rem; }
-            
             .build-item { grid-template-columns: 1fr; gap: 10px; }
             .build-stats { text-align: left; margin-bottom: 10px; border-left: 4px solid var(--accent); padding-left: 15px; }
             .stat-huge { font-size: 2rem; }
-            
-            .overlay {
-                display: none;
-                position: fixed;
-                top: 0; left: 0; width: 100%; height: 100%;
-                background: rgba(0,0,0,0.5);
-                z-index: 1000;
-            }
+            .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; }
             .overlay.active { display: block; }
         }
     </style>
@@ -406,12 +249,16 @@
                 </div>
                 
                 <h2 class="hero-heading">
-                    Turning Digital Intelligence into<br>
-                    <span style="color: var(--accent);">Physical Consequence.</span>
+                    Digital Intelligence.<br>
+                    <span style="color: var(--accent);">Physical Agency.</span>
                 </h2>
+
+                <div class="hero-trinity">
+                    Converging Agentic AI • Healthcare • Robotics
+                </div>
                 
                 <p class="hero-text">
-                    The future isn't just about models; it's about movement. Whether it's moving billions of dollars or autonomous machines, I engineer the complex infrastructure that allows human ambition to scale.
+                    I don't just architect software; I engineer the nervous system of the physical world. From autonomous swarms to life-saving medical devices, I build the infrastructure that allows human ambition to scale.
                 </p>
             </section>
 
@@ -427,7 +274,7 @@
             <section id="ethos">
                 <span class="section-label">Ethos</span>
                 <p class="section-intro">
-                    We are shifting from software that knows to systems that act. My leadership is built on four pillars of consequence:
+                    We are shifting from software that *knows* to systems that *act*. My leadership is built on four pillars of consequence:
                 </p>
                 <div class="grid-2">
                     <div class="card">
@@ -539,7 +386,7 @@
             <section id="ventures">
                 <span class="section-label">Ventures</span>
                 <p class="section-intro">
-                    I allocate capital and build engines of creation.
+                    Allocating capital and building engines of creation.
                 </p>
                 <div class="grid-2">
                     <div class="card" style="border-top: 4px solid #10b981;">
@@ -556,11 +403,16 @@
                     <div class="card" style="border-top: 4px solid #f59e0b;">
                         <div class="card-title">The Accelerators</div>
                         <p class="card-body">
-                            <strong>Incubating talent and technology.</strong> Creating space for the next generation of engineers.
+                            <strong>Incubating talent and technology.</strong> Creating space for the next generation of engineers to build hard things.
                         </p>
-                        <div class="card-meta">
-                            <strong>🤖 Brickbots Robotics:</strong> Hardware Accelerator.<br>
-                            <strong>🚀 Samartha International:</strong> Talent Incubation.
+                        <span class="focus-title">Focus Areas</span>
+                        <div class="thesis-list">
+                            <span class="thesis-tag">Embodied AI</span>
+                            <span class="thesis-tag">Humanoid Robotics</span>
+                            <span class="thesis-tag">Computational Bio</span>
+                            <span class="thesis-tag">Industrial Autonomy</span>
+                            <span class="thesis-tag">Smart Infrastructure</span>
+                            <span class="thesis-tag">Vertical Agents</span>
                         </div>
                     </div>
                 </div>
