@@ -4,50 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <title>Jayanth Madduru | Builder. Investor. Operator.</title>
-    <meta name="description" content="Personal portfolio of Jayanth Madduru. Engineering the Architecture of Action.">
+
+    <title>Jayanth Madduru | Engineering Intelligence into Matter</title>
+    <meta name="description" content="Investor, entrepreneur, and systems architect at the convergence of AI, robotics, and regulated industries. Building the infrastructure where code meets consequence.">
     <meta name="robots" content="index, follow">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <style>
         /* --- DESIGN TOKENS --- */
         :root {
-            --bg-sidebar: #0f172a;
-            --text-sidebar: #94a3b8;
+            --bg-sidebar: #0a0e1a;
+            --text-sidebar: #8b92a7;
             --text-sidebar-head: #f8fafc;
-            --sidebar-width: 300px;
-            
+            --sidebar-width: 320px;
+
             --bg-main: #ffffff;
-            --text-primary: #0f172a; 
+            --text-primary: #0f172a;
             --text-secondary: #475569;
             --text-muted: #94a3b8;
-            
-            --accent: #2563eb; 
-            --accent-bg: #eff6ff;
+
+            --accent: #0ea5e9;
+            --accent-dark: #0284c7;
+            --accent-bg: #f0f9ff;
             --border: #e2e8f0;
-            
-            --font-main: 'Inter', sans-serif;
+
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
         /* --- RESET & LAYOUT --- */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; font-size: 16px; }
-        body { 
-            font-family: var(--font-main); 
-            line-height: 1.6; 
-            color: var(--text-primary); 
+        body {
+            font-family: var(--font-main);
+            line-height: 1.7;
+            color: var(--text-primary);
             background: var(--bg-main);
-            display: flex; 
-            min-height: 100vh; 
+            display: flex;
+            min-height: 100vh;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        
-        a { text-decoration: none; color: inherit; transition: 0.2s; cursor: pointer; }
-        strong { font-weight: 700; color: #0f172a; }
+
+        a { text-decoration: none; color: inherit; transition: all 0.2s ease; cursor: pointer; }
+        a:hover { color: var(--accent); }
+        strong { font-weight: 700; color: var(--text-primary); }
 
         /* --- MOBILE HEADER --- */
         .mobile-header {
@@ -62,17 +65,17 @@
             padding: 0 20px;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
         }
-        .mobile-logo { color: #fff; font-weight: 700; font-size: 1.1rem; }
-        .hamburger { background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+        .mobile-logo { color: #fff; font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px; }
+        .hamburger { background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; padding: 5px 10px; }
 
         /* --- SIDEBAR --- */
         .sidebar {
             width: var(--sidebar-width);
             background: var(--bg-sidebar);
             color: var(--text-sidebar);
-            padding: 40px 25px;
+            padding: 50px 30px;
             position: fixed;
             height: 100vh;
             overflow-y: auto;
@@ -84,113 +87,460 @@
             transition: transform 0.3s ease;
         }
         .sidebar::-webkit-scrollbar { width: 6px; }
-        .sidebar::-webkit-scrollbar-track { background: #0f172a; }
+        .sidebar::-webkit-scrollbar-track { background: var(--bg-sidebar); }
         .sidebar::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
 
-        .profile-header { text-align: center; margin-bottom: 30px; }
+        .profile-header { text-align: center; margin-bottom: 40px; }
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid rgba(255,255,255,0.1);
-            margin-bottom: 15px;
+            border: 3px solid rgba(14, 165, 233, 0.3);
+            margin-bottom: 20px;
+            box-shadow: 0 8px 30px rgba(14, 165, 233, 0.15);
         }
-        .profile-name { font-size: 1.4rem; font-weight: 700; color: var(--text-sidebar-head); margin-bottom: 5px; letter-spacing: -0.5px; line-height: 1.2; }
-        .profile-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; }
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--text-sidebar-head);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+        .profile-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            font-weight: 700;
+        }
 
-        .nav { margin-bottom: 30px; }
-        .nav-link { display: block; padding: 8px 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.2s ease; }
-        .nav-link:hover { padding-left: 5px; color: var(--accent); }
-        .nav-link.active { color: var(--accent); font-weight: 700; padding-left: 5px; }
+        .nav { margin-bottom: 30px; margin-top: 20px; }
+        .nav-link {
+            display: block;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.2s ease;
+        }
+        .nav-link:hover {
+            padding-left: 8px;
+            color: var(--accent);
+            border-left: 2px solid var(--accent);
+        }
 
-        .sidebar-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 10px; font-weight: 700; margin-top: 25px; }
-        
-        .company-list { display: flex; flex-direction: column; gap: 0; }
-        .company-link { display: block; font-size: 0.85rem; color: #cbd5e1; padding: 6px 0; border-bottom: 1px dashed rgba(255,255,255,0.1); opacity: 0.8; }
-        .company-link:hover { opacity: 1; color: #fff; padding-left: 3px; }
+        .sidebar-section { margin-top: 35px; }
+        .sidebar-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #64748b;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
 
-        .cta-button { display: block; margin-top: 30px; background: var(--accent); color: white; text-align: center; padding: 12px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
-        .cta-button:hover { background: #1d4ed8; }
+        .thesis-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .thesis-item {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            padding-left: 12px;
+            border-left: 2px solid #334155;
+            line-height: 1.5;
+        }
 
-        .contact-links { margin-top: 20px; font-size: 0.8rem; text-align: center; }
-        .contact-links a { opacity: 0.6; margin: 0 5px; }
-        .contact-links a:hover { opacity: 1; text-decoration: underline; }
+        .cta-button {
+            display: block;
+            margin-top: 30px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(14, 165, 233, 0.3);
+            background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
+        }
+
+        .social-links {
+            margin-top: 25px;
+            font-size: 0.8rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .social-links a {
+            opacity: 0.7;
+            font-weight: 500;
+        }
+        .social-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
 
         /* --- MAIN CONTENT --- */
-        .main { margin-left: var(--sidebar-width); flex-grow: 1; padding: 0; max-width: 100%; }
-        .container { max-width: 850px; margin: 0 auto; padding: 100px 60px; }
-        section { margin-bottom: 120px; scroll-margin-top: 80px; }
+        .main {
+            margin-left: var(--sidebar-width);
+            flex-grow: 1;
+            padding: 0;
+            max-width: 100%;
+        }
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 120px 70px 80px;
+        }
+        section {
+            margin-bottom: 140px;
+            scroll-margin-top: 80px;
+        }
 
-        /* HERO - VISIONARY */
-        .hero-identity { font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-        .identity-dot { width: 4px; height: 4px; background: var(--accent); border-radius: 50%; }
+        /* HERO */
+        .hero-eyebrow {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
 
-        .hero-heading { font-size: 3.5rem; font-weight: 800; line-height: 1.05; color: var(--text-primary); letter-spacing: -1.5px; margin-bottom: 25px; }
-        
-        /* The Trinity Line */
-        .hero-trinity { font-size: 1rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px; border-left: 4px solid var(--text-primary); padding-left: 15px; }
+        .hero-heading {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.05;
+            color: var(--text-primary);
+            letter-spacing: -2px;
+            margin-bottom: 30px;
+        }
+        .hero-heading .gradient-text {
+            background: linear-gradient(135deg, var(--accent) 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-        .hero-text { font-size: 1.25rem; color: var(--text-secondary); max-width: 720px; font-weight: 400; line-height: 1.6; }
+        .hero-manifesto {
+            font-size: 1.35rem;
+            color: var(--text-secondary);
+            max-width: 780px;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
 
-        /* HEADINGS */
-        .section-label { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; color: var(--text-muted); margin-bottom: 25px; display: inline-block; border-bottom: 2px solid var(--accent); padding-bottom: 5px; }
-        .section-intro { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px; max-width: 700px; }
+        .hero-thesis {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 750px;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-top: 30px;
+            padding-left: 25px;
+            border-left: 4px solid var(--accent);
+            font-style: italic;
+        }
 
-        /* LISTS & CARDS */
-        .now-list { list-style: none; border-left: 2px solid var(--border); padding-left: 25px; }
-        .now-item { margin-bottom: 15px; color: var(--text-secondary); font-size: 1.05rem; }
-        .now-item strong { color: var(--text-primary); }
+        /* SECTION STYLES */
+        .section-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 900;
+            color: var(--accent);
+            margin-bottom: 30px;
+            display: inline-block;
+        }
 
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 30px; transition: all 0.2s ease; height: 100%; }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.04); border-color: var(--accent); }
-        .card-icon { font-size: 1.8rem; margin-bottom: 15px; display: block; }
-        .card-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--text-primary); }
-        .card-body { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
-        .card-meta { margin-top: 20px; font-size: 0.85rem; color: var(--text-secondary); border-top: 1px solid var(--border); padding-top: 15px; }
+        .section-intro {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+            max-width: 750px;
+            line-height: 1.7;
+        }
 
-        /* ACCELERATOR FOCUS TAGS */
-        .focus-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 700; margin-top: 20px; margin-bottom: 10px; display: block; }
-        .thesis-list { display: flex; flex-wrap: wrap; gap: 8px; }
-        .thesis-tag { font-size: 0.75rem; background: #fffbeb; color: #b45309; padding: 4px 10px; border-radius: 4px; font-weight: 600; border: 1px solid #fcd34d; }
+        /* WHAT I'M DOING NOW */
+        .now-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .now-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        .now-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+            border-color: var(--accent);
+        }
+        .now-icon {
+            font-size: 2.2rem;
+            margin-bottom: 18px;
+            display: block;
+        }
+        .now-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        .now-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
 
-        /* SYSTEMS & GARDEN */
-        .garden-item { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid var(--border); }
-        .garden-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-        .garden-title { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
-        .garden-tag { font-size: 0.7rem; background: #ecfdf5; color: #059669; padding: 2px 8px; border-radius: 10px; font-weight: 600; border: 1px solid #d1fae5; }
-        .garden-date { font-size: 0.8rem; color: var(--text-muted); margin-left: auto; font-family: monospace; }
-        .garden-desc { font-size: 0.95rem; color: var(--text-secondary); }
+        /* THESIS CARDS */
+        .thesis-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        .thesis-card {
+            background: #ffffff;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .thesis-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent) 0%, #7c3aed 100%);
+        }
+        .thesis-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 15px 50px rgba(14, 165, 233, 0.1);
+        }
+        .thesis-number {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        .thesis-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+        .thesis-body {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
 
-        .build-item { display: grid; grid-template-columns: 180px 1fr; gap: 30px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
-        .build-item:last-child { border-bottom: none; }
-        .build-stats { text-align: right; }
-        .stat-huge { display: block; font-size: 2.5rem; font-weight: 800; color: var(--text-primary); line-height: 1; letter-spacing: -1px; }
-        .stat-context { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 600; margin-top: 5px; display: block;}
-        .build-content { padding-top: 5px; }
-        .build-system-name { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
-        .build-company { font-family: monospace; color: var(--accent); font-size: 0.9rem; margin-bottom: 15px; display: block; font-weight: 600; }
-        .build-desc { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 20px; max-width: 600px; }
-        .tech-pill-container { display: flex; gap: 8px; flex-wrap: wrap; }
-        .tech-pill { font-size: 0.75rem; background: #f1f5f9; padding: 4px 10px; border-radius: 4px; color: #64748b; font-weight: 500; border: 1px solid #e2e8f0; }
+        /* PORTFOLIO */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .portfolio-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 35px;
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--accent);
+        }
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+        .portfolio-type {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+        .portfolio-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+        .portfolio-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .portfolio-tag {
+            font-size: 0.7rem;
+            background: var(--accent-bg);
+            color: var(--accent-dark);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
 
-        .footer-cta { background: #f8fafc; border: 1px solid var(--border); padding: 40px; border-radius: 12px; text-align: center; margin-top: 80px; }
-        .footer-title { font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 10px; }
-        .footer-text { margin-bottom: 25px; color: var(--text-secondary); }
+        /* WRITING/SIGNALS */
+        .signal-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .signal-item {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+        .signal-item:hover {
+            padding-left: 15px;
+        }
+        .signal-item:last-child {
+            border-bottom: none;
+        }
+        .signal-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .signal-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            flex-grow: 1;
+        }
+        .signal-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: 'SF Mono', 'Courier New', monospace;
+        }
+        .signal-tag {
+            font-size: 0.65rem;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .signal-body {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        /* EXPERIENCE TIMELINE */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            border-left: 2px solid var(--border);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        .timeline-company {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
+        }
+        .timeline-role {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+        .timeline-desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* FOOTER CTA */
+        .footer-cta {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            border: 2px solid var(--accent);
+            padding: 60px 50px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .footer-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+        .footer-text {
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .now-grid, .portfolio-grid { grid-template-columns: 1fr; }
+        }
 
         @media (max-width: 900px) {
             .mobile-header { display: flex; }
             .sidebar { transform: translateX(-100%); width: 85%; z-index: 1001; box-shadow: 10px 0 30px rgba(0,0,0,0.5); }
             .sidebar.active { transform: translateX(0); }
-            .main { margin-left: 0; padding-top: 60px; } 
-            .container { padding: 40px 20px; }
-            .grid-2 { grid-template-columns: 1fr; }
-            .hero-heading { font-size: 2.2rem; }
-            .build-item { grid-template-columns: 1fr; gap: 10px; }
-            .build-stats { text-align: left; margin-bottom: 10px; border-left: 4px solid var(--accent); padding-left: 15px; }
-            .stat-huge { font-size: 2rem; }
-            .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; }
+            .main { margin-left: 0; padding-top: 60px; }
+            .container { padding: 50px 25px; }
+            .hero-heading { font-size: 2.5rem; }
+            .hero-manifesto { font-size: 1.15rem; }
+            .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; }
             .overlay.active { display: block; }
         }
     </style>
@@ -205,246 +555,263 @@
 
     <aside class="sidebar">
         <div class="profile-header">
-            <img src="profile_pic.jpeg" alt="Jay Madduru" class="profile-img">
-            <h1 class="profile-name">Jayanth<br>Madduru</h1>
+            <img src="profile_pic.jpeg" alt="Jayanth Madduru" class="profile-img">
+            <h1 class="profile-name">Jayanth Madduru</h1>
             <div class="profile-title">Builder • Investor • Operator</div>
         </div>
 
         <nav class="nav">
-            <a href="#intro" class="nav-link">Manifesto</a>
-            <a href="#now" class="nav-link">Focus</a>
-            <a href="#ethos" class="nav-link">Ethos</a>
-            <a href="#systems" class="nav-link">Systems</a>
-            <a href="#ventures" class="nav-link">Ventures</a>
-            <a href="#signals" class="nav-link">Signals</a>
+            <a href="#manifesto" class="nav-link">Manifesto</a>
+            <a href="#now" class="nav-link">Current Work</a>
+            <a href="#thesis" class="nav-link">Investment Thesis</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#signals" class="nav-link">Thinking</a>
+            <a href="#background" class="nav-link">Background</a>
         </nav>
-        
-        <div class="sidebar-label">Career History</div>
-        <div class="company-list">
-            <a href="#build-technet" class="company-link">Tech-Net</a>
-            <a href="#build-convatec" class="company-link">Convatec</a>
-            <a href="#build-block" class="company-link">Block (Cash App)</a>
-            <a href="#build-uber" class="company-link">Uber</a>
-            <span class="company-link" style="cursor: default;">Oracle / Silver Spring</span>
+
+        <div class="sidebar-section">
+            <div class="sidebar-label">Focus Areas</div>
+            <div class="thesis-list">
+                <div class="thesis-item">Agentic AI Systems</div>
+                <div class="thesis-item">Embodied Robotics</div>
+                <div class="thesis-item">Regulated AI (MedTech/FinTech)</div>
+                <div class="thesis-item">Vertical Intelligence</div>
+            </div>
         </div>
 
-        <a href="mailto:jayanthm@gmail.com" class="cta-button">Let's Build</a>
-        
-        <div class="contact-links">
-            <a href="mailto:jayanthm@gmail.com">Email</a> • 
+        <a href="mailto:jayanthm@gmail.com" class="cta-button">Start a Conversation</a>
+
+        <div class="social-links">
+            <a href="mailto:jayanthm@gmail.com">jayanthm@gmail.com</a>
             <a href="https://linkedin.com/in/jaymadduru">LinkedIn</a>
         </div>
     </aside>
 
     <main class="main">
         <div class="container">
-            
-            <section id="intro">
-                <div class="hero-identity">
-                    <span>Problem Solver & Engineer at Heart</span>
-                    <span class="identity-dot"></span>
-                    <span>Product Leader by Trade</span>
-                    <span class="identity-dot"></span>
-                    <span>Entrepreneur by Spirit</span>
-                </div>
-                
+
+            <section id="manifesto">
+                <div class="hero-eyebrow">Engineering Intelligence into Matter</div>
+
                 <h2 class="hero-heading">
-                    Digital Intelligence.<br>
-                    <span style="color: var(--accent);">Physical Agency.</span>
+                    The future isn't<br>
+                    about <span class="gradient-text">smarter software.</span><br>
+                    It's about software that <em>acts</em>.
                 </h2>
 
-                <div class="hero-trinity">
-                    Converging Agentic AI • Healthcare • Robotics
-                </div>
-                
-                <p class="hero-text">
-                    I don't just architect software; I engineer the nervous system of the physical world. From autonomous swarms to life-saving medical devices, I build the infrastructure that allows human ambition to scale.
+                <p class="hero-manifesto">
+                    I invest in and build companies at the convergence of <strong>AI, robotics, and regulated industries</strong>—places where intelligence must operate under constraints, where decisions have real-world consequences, and where the gap between "demo" and "deployed" is measured in millions of compliance hours.
+                </p>
+
+                <p class="hero-thesis">
+                    We're moving from an era of <strong>passive intelligence</strong> (answering questions) to <strong>active agency</strong> (executing workflows). The companies that win this transition won't just predict better—they'll <em>operate</em> better.
                 </p>
             </section>
 
             <section id="now">
-                <span class="section-label">Focus</span>
-                <ul class="now-list">
-                    <li class="now-item"><strong>Building:</strong> Agentic swarms for Enterprise at Tech-Net.</li>
-                    <li class="now-item"><strong>Investing:</strong> Scouting pre-seed founders in Robotics and Vertical AI.</li>
-                    <li class="now-item"><strong>Learning:</strong> Deep diving into the Model Context Protocol (MCP) server implementations.</li>
-                </ul>
-            </section>
-
-            <section id="ethos">
-                <span class="section-label">Ethos</span>
+                <span class="section-label">What I'm Doing Now</span>
                 <p class="section-intro">
-                    We are shifting from software that *knows* to systems that *act*. My leadership is built on four pillars of consequence:
+                    Building, investing, and experimenting at the edge of what's possible.
                 </p>
-                <div class="grid-2">
-                    <div class="card">
-                        <span class="card-icon">⚡</span>
-                        <div class="card-title">Agentic Force</div>
-                        <p class="card-body">Intelligence is useless without agency. I build <strong>Autonomous Swarms</strong> that don't just answer questions—they execute workflows, trade assets, and govern outcomes.</p>
+
+                <div class="now-grid">
+                    <div class="now-card">
+                        <span class="now-icon">🤖</span>
+                        <div class="now-title">Building Workflown</div>
+                        <p class="now-desc">Architecting multi-agent swarms at Tech-Net—moving enterprises from chatbots to autonomous systems using MCP.</p>
                     </div>
-                    <div class="card">
-                        <span class="card-icon">⚖️</span>
-                        <div class="card-title">Governed Scale</div>
-                        <p class="card-body">Compliance isn't a brake; it's the rails. I treat <strong>Risk & Governance</strong> as essential infrastructure that allows Fintech and MedTech to run at maximum velocity.</p>
+
+                    <div class="now-card">
+                        <span class="now-icon">💰</span>
+                        <div class="now-title">Investing at Pre-Seed</div>
+                        <p class="now-desc">GP at Northwest & uFin Capital. First-check writer for technical founders in robotics, vertical AI, and computational bio.</p>
                     </div>
-                    <div class="card">
-                        <span class="card-icon">🏗️</span>
-                        <div class="card-title">Embodied Tech</div>
-                        <p class="card-body">Code must touch the real world. From <strong>Robotics</strong> to <strong>IoT Grids</strong>, I focus on the intersection where digital logic meets physical reality.</p>
-                    </div>
-                    <div class="card">
-                        <span class="card-icon">🌐</span>
-                        <div class="card-title">Venture Velocity</div>
-                        <p class="card-body">I don't just ship products; I build companies. My approach brings <strong>Venture Capital speed</strong> (0-to-1) to Enterprise scale (1-to-N).</p>
+
+                    <div class="now-card">
+                        <span class="now-icon">🧪</span>
+                        <div class="now-title">Researching Embodied AI</div>
+                        <p class="now-desc">Deep diving into humanoid robotics, industrial autonomy, and the protocols that will govern agent-to-agent commerce.</p>
                     </div>
                 </div>
             </section>
 
-            <section id="systems">
-                <span class="section-label">Systems</span>
+            <section id="thesis">
+                <span class="section-label">Investment Thesis</span>
                 <p class="section-intro">
-                    A catalog of proprietary engines built to solve "impossible" problems at scale.
+                    Three pillars that guide where I deploy capital and attention.
                 </p>
 
-                <div class="build-item" id="build-uber">
-                    <div class="build-stats">
-                        <span class="stat-huge">320M</span>
-                        <span class="stat-context">Daily Events</span>
-                    </div>
-                    <div class="build-content">
-                        <div class="build-system-name">The Financial Nervous System</div>
-                        <span class="build-company">Deployed at UBER</span>
-                        <p class="build-desc">
-                            <strong>System Name: Arthika.</strong> A real-time external subledger handling money movement across 60 countries. We treated Profitability as an ML "Objective Function" to optimize unit economics at the transaction level.
+                <div class="thesis-cards">
+                    <div class="thesis-card">
+                        <div class="thesis-number">Thesis 01</div>
+                        <h3 class="thesis-title">Agentic Systems Will Replace SaaS</h3>
+                        <p class="thesis-body">
+                            The next decade belongs to software that <strong>executes outcomes</strong>, not just enables workflows. Traditional SaaS sells tools; agentic systems sell results. I'm backing founders building autonomous agents that operate in constrained, high-stakes environments—finance, healthcare, logistics, legal.
                         </p>
-                        <div class="tech-pill-container">
-                            <span class="tech-pill">External Subledger</span>
-                            <span class="tech-pill">Microservices</span>
-                            <span class="tech-pill">80% Automation</span>
-                        </div>
                     </div>
-                </div>
 
-                <div class="build-item" id="build-block">
-                    <div class="build-stats">
-                        <span class="stat-huge">50%</span>
-                        <span class="stat-context">Accuracy Lift</span>
-                    </div>
-                    <div class="build-content">
-                        <div class="build-system-name">The Trust Engine</div>
-                        <span class="build-company">Deployed at BLOCK (Cash App)</span>
-                        <p class="build-desc">
-                            Solving the "Risk vs. Growth" paradox. I overhauled the data stack to deploy real-time Deep Learning models, securing billions in P2P volume while reducing good-user friction by 30%.
+                    <div class="thesis-card">
+                        <div class="thesis-number">Thesis 02</div>
+                        <h3 class="thesis-title">Intelligence Must Touch Matter</h3>
+                        <p class="thesis-body">
+                            AI without physical agency is incomplete. The biggest opportunities lie at the intersection of <strong>digital intelligence and physical infrastructure</strong>—robotics, autonomous systems, smart grids, medical devices. Code must move atoms, not just pixels.
                         </p>
-                        <div class="tech-pill-container">
-                            <span class="tech-pill">Deep Learning</span>
-                            <span class="tech-pill">Snowflake/Airflow</span>
-                            <span class="tech-pill">Real-time Risk</span>
-                        </div>
                     </div>
-                </div>
 
-                <div class="build-item" id="build-technet">
-                    <div class="build-stats">
-                        <span class="stat-huge">Agentic</span>
-                        <span class="stat-context">Architecture</span>
-                    </div>
-                    <div class="build-content">
-                        <div class="build-system-name">The Autonomy Shift</div>
-                        <span class="build-company">Deployed at TECH-NET</span>
-                        <p class="build-desc">
-                            <strong>System Name: Workflown.</strong> Moving the enterprise from static Chatbots to Autonomous Agents. We utilized the Model Context Protocol (MCP) to create multi-agent swarms that execute complex utility workflows.
+                    <div class="thesis-card">
+                        <div class="thesis-number">Thesis 03</div>
+                        <h3 class="thesis-title">Regulation Is Rocket Fuel, Not Friction</h3>
+                        <p class="thesis-body">
+                            The hardest industries to disrupt—healthcare, banking, insurance—have the <strong>deepest moats</strong> once you breach them. Compliance isn't a bug; it's a feature that keeps competitors out. I invest in founders who treat governance as infrastructure, not overhead.
                         </p>
-                        <div class="tech-pill-container">
-                            <span class="tech-pill">Multi-Agent Systems</span>
-                            <span class="tech-pill">MCP Standard</span>
-                            <span class="tech-pill">20% Rev Growth</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="build-item" id="build-convatec">
-                    <div class="build-stats">
-                        <span class="stat-huge">3 Mo</span>
-                        <span class="stat-context">Zero to MVP</span>
-                    </div>
-                    <div class="build-content">
-                        <div class="build-system-name">The Velocity Protocol</div>
-                        <span class="build-company">Deployed at CONVATEC</span>
-                        <p class="build-desc">
-                            <strong>System Name: Cogen.</strong> Proving that Regulated AI can move fast. We built a HIPAA-compliant GenAI platform on Azure from whiteboard to production in 90 days.
-                        </p>
-                        <div class="tech-pill-container">
-                            <span class="tech-pill">SaMD (Medical Device)</span>
-                            <span class="tech-pill">Azure OpenAI</span>
-                            <span class="tech-pill">HIPAA/GDPR</span>
-                        </div>
                     </div>
                 </div>
             </section>
 
-            <section id="ventures">
-                <span class="section-label">Ventures</span>
+            <section id="portfolio">
+                <span class="section-label">Portfolio & Ventures</span>
                 <p class="section-intro">
-                    Allocating capital and building engines of creation.
+                    Companies I've backed or built.
                 </p>
-                <div class="grid-2">
-                    <div class="card" style="border-top: 4px solid #10b981;">
-                        <div class="card-title">The Capital</div>
-                        <p class="card-body">
-                            <strong>Northwest & uFin Capital:</strong> General Partner. Backing high-conviction technical founders.
+
+                <div class="portfolio-grid">
+                    <div class="portfolio-card">
+                        <div class="portfolio-type">GP / First Check</div>
+                        <div class="portfolio-name">Hivel.ai</div>
+                        <p class="portfolio-desc">
+                            Vertical AI agents for insurance underwriting. Led pre-seed round. Scaled from $0 to $1M+ ARR in 18 months.
                         </p>
-                        <div class="card-meta">
-                            <strong>🦄 Hivel.ai:</strong> First check writer ($0 to $1M+ ARR).<br>
-                            <strong>🤖 Affogato.ai:</strong> AI Ad Agents.<br>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Insurance Tech</span>
+                            <span class="portfolio-tag">Agentic AI</span>
                         </div>
                     </div>
 
-                    <div class="card" style="border-top: 4px solid #f59e0b;">
-                        <div class="card-title">The Accelerators</div>
-                        <p class="card-body">
-                            <strong>Incubating talent and technology.</strong> Creating space for the next generation of engineers to build hard things.
+                    <div class="portfolio-card">
+                        <div class="portfolio-type">Angel / Advisor</div>
+                        <div class="portfolio-name">Affogato.ai</div>
+                        <p class="portfolio-desc">
+                            Autonomous ad agents that optimize campaigns in real-time. Early investor and strategic advisor.
                         </p>
-                        <span class="focus-title">Focus Areas</span>
-                        <div class="thesis-list">
-                            <span class="thesis-tag">Embodied AI</span>
-                            <span class="thesis-tag">Humanoid Robotics</span>
-                            <span class="thesis-tag">Computational Bio</span>
-                            <span class="thesis-tag">Industrial Autonomy</span>
-                            <span class="thesis-tag">Smart Infrastructure</span>
-                            <span class="thesis-tag">Vertical Agents</span>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Marketing AI</span>
+                            <span class="portfolio-tag">Multi-Agent</span>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="portfolio-type">Builder / Architect</div>
+                        <div class="portfolio-name">Workflown (Tech-Net)</div>
+                        <p class="portfolio-desc">
+                            Enterprise agentic platform using MCP. Moving Fortune 500s from static chatbots to autonomous execution engines.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Enterprise AI</span>
+                            <span class="portfolio-tag">MCP Protocol</span>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="portfolio-type">Builder / Architect</div>
+                        <div class="portfolio-name">Cogen (Convatec)</div>
+                        <p class="portfolio-desc">
+                            HIPAA-compliant GenAI platform for medical devices. Built from whiteboard to production in 90 days.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">MedTech AI</span>
+                            <span class="portfolio-tag">SaMD</span>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section id="signals">
-                <span class="section-label">Signals</span>
-                <p class="section-intro">Living notes and seedlings for future architectures.</p>
-                
-                <div class="garden-item">
-                    <div class="garden-header">
-                        <span class="garden-title">Why Agentic AI will eat SaaS</span>
-                        <span class="garden-tag">Seedling</span>
-                        <span class="garden-date">Jan 2026</span>
+                <span class="section-label">Thinking Out Loud</span>
+                <p class="section-intro">
+                    Ideas in progress. Seedlings for future architectures.
+                </p>
+
+                <div class="signal-list">
+                    <div class="signal-item">
+                        <div class="signal-header">
+                            <span class="signal-title">The End of Seat-Based Pricing</span>
+                            <span class="signal-tag">Seedling</span>
+                            <span class="signal-date">Jan 2026</span>
+                        </div>
+                        <p class="signal-body">
+                            Agentic AI will collapse 80% of B2B SaaS pricing models. When software executes outcomes instead of enabling workflows, you don't charge per user—you charge per result. The shift from "clicking buttons" to "approving outcomes" fundamentally breaks seat-based economics.
+                        </p>
                     </div>
-                    <p class="garden-desc">Traditional SaaS sells tools; Agentic AI sells outcomes. The shift from "clicking buttons" to "approving results" will collapse 80% of B2B seat-based pricing.</p>
+
+                    <div class="signal-item">
+                        <div class="signal-header">
+                            <span class="signal-title">Governance as Code</span>
+                            <span class="signal-tag">Sprouting</span>
+                            <span class="signal-date">Dec 2025</span>
+                        </div>
+                        <p class="signal-body">
+                            In regulated industries, we can't rely on human review for AI output. We need deterministic guardrails embedded in the model context itself. The future of compliance is policy-as-code that executes <em>during</em> inference, not after.
+                        </p>
+                    </div>
+
+                    <div class="signal-item">
+                        <div class="signal-header">
+                            <span class="signal-title">Why Humanoid Robots Will Eat Industrial Automation</span>
+                            <span class="signal-tag">Seedling</span>
+                            <span class="signal-date">Nov 2025</span>
+                        </div>
+                        <p class="signal-body">
+                            The world is built for humans. Retrofitting factories for specialized robots is expensive; deploying humanoids into existing infrastructure is not. The first company to crack sub-$50K humanoids with 99.9% uptime wins industrial automation.
+                        </p>
+                    </div>
                 </div>
-                
-                <div class="garden-item">
-                    <div class="garden-header">
-                        <span class="garden-title">Governance as Code</span>
-                        <span class="garden-tag">Sprouting</span>
-                        <span class="garden-date">Dec 2025</span>
+            </section>
+
+            <section id="background">
+                <span class="section-label">Background</span>
+                <p class="section-intro">
+                    A career spent building systems that operate under constraints.
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-company">Uber</div>
+                        <div class="timeline-role">Architecting Financial Infrastructure</div>
+                        <p class="timeline-desc">
+                            Built Arthika—a real-time external subledger processing 320M daily events across 60 countries. Treated profitability as an ML optimization problem, automating 80% of financial reconciliation.
+                        </p>
                     </div>
-                    <p class="garden-desc">In regulated industries, we can't rely on human review for AI output. We need deterministic guardrails embedded in the model context itself.</p>
+
+                    <div class="timeline-item">
+                        <div class="timeline-company">Block (Cash App)</div>
+                        <div class="timeline-role">Securing Billions in P2P Volume</div>
+                        <p class="timeline-desc">
+                            Rebuilt the data stack to deploy real-time deep learning models for fraud detection. Improved accuracy by 50% while reducing friction for legitimate users by 30%.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-company">Convatec</div>
+                        <div class="timeline-role">Proving Regulated AI Can Move Fast</div>
+                        <p class="timeline-desc">
+                            Launched a HIPAA-compliant GenAI platform (SaMD) in 90 days. Demonstrated that compliance isn't a speed tax—it's a forcing function for better architecture.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-company">Tech-Net</div>
+                        <div class="timeline-role">Leading the Agentic Shift</div>
+                        <p class="timeline-desc">
+                            Architecting Workflown—enterprise multi-agent systems using the Model Context Protocol. Moving Fortune 500 companies from chatbots to autonomous execution engines.
+                        </p>
+                    </div>
                 </div>
             </section>
 
             <div class="footer-cta">
-                <div class="footer-title">Ready to build the future?</div>
-                <p class="footer-text">I'm always looking for high-conviction founders and complex problems.</p>
-                <a href="mailto:jayanthm@gmail.com" class="cta-button" style="display: inline-block; width: auto; padding: 12px 30px; margin: 0;">Get in Touch</a>
+                <div class="footer-title">Building something ambitious?</div>
+                <p class="footer-text">I invest in and advise technical founders solving hard problems in robotics, AI, and regulated industries.</p>
+                <a href="mailto:jayanthm@gmail.com" class="cta-button" style="display: inline-block; width: auto; padding: 14px 40px; margin: 0;">Let's Talk</a>
             </div>
 
         </div>
@@ -455,9 +822,8 @@
             document.querySelector('.sidebar').classList.toggle('active');
             document.querySelector('.overlay').classList.toggle('active');
         }
-        
-        // Close menu when clicking a link on mobile
-        document.querySelectorAll('.nav-link, .company-link').forEach(link => {
+
+        document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 900) {
                     toggleMenu();
